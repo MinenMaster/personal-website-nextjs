@@ -1,15 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { setupCanvasBackground } from "../canvasBackground";
+import { useState, useEffect } from "react";
 
 export default function Home() {
     const [data, setData] = useState("Loading...");
 
     const URL =
         "https://personal-website-nodejs-serverless-function-express.vercel.app/api";
-
-    const canvasRef = useRef<HTMLCanvasElement>(null);
 
     async function getHello() {
         const response = await fetch(`${URL}/hello`);
@@ -28,7 +25,6 @@ export default function Home() {
         getHello()
             .then((data) => setData(data.message))
             .catch((error) => console.error(error));
-        setupCanvasBackground(canvasRef.current);
     }, []);
 
     return (
