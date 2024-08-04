@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Canvas from "./BackgroundCanvas";
 
 export default function Home() {
     const [data, setData] = useState("Loading...");
@@ -34,19 +33,23 @@ export default function Home() {
                 <div className="ball"></div>
                 <div
                     className="ball"
-                    style={{
-                        "--delay": "-80s",
-                        "--size": "0.4",
-                        "--speed": "160s",
-                    }}
+                    style={
+                        {
+                            "--delay": "-80s",
+                            "--size": "0.4",
+                            "--speed": "160s",
+                        } as React.CSSProperties
+                    }
                 ></div>
                 <div
                     className="ball"
-                    style={{
-                        "--delay": "-40s",
-                        "--size": "0.3",
-                        "--speed": "80s",
-                    }}
+                    style={
+                        {
+                            "--delay": "-40s",
+                            "--size": "0.3",
+                            "--speed": "80s",
+                        } as React.CSSProperties
+                    }
                 ></div>
             </div>
             <main className="flex min-h-screen flex-col items-center p-6 justify-between">
