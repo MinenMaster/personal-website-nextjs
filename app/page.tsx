@@ -1,15 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { setupCanvasBackground } from "./canvasBackground";
+import Canvas from "./BackgroundCanvas";
 
 export default function Home() {
     const [data, setData] = useState("Loading...");
 
     const URL =
         "https://personal-website-nodejs-serverless-function-express.vercel.app/api";
-
-    const canvasRef = useRef<HTMLCanvasElement>(null);
 
     async function getHello() {
         const response = await fetch(`${URL}/hello`);
@@ -28,12 +26,29 @@ export default function Home() {
         getHello()
             .then((data) => setData(data.message))
             .catch((error) => console.error(error));
-        setupCanvasBackground(canvasRef.current);
     }, []);
 
     return (
         <>
-            <canvas id="background"></canvas>
+            <div className="glow-container">
+                <div className="ball"></div>
+                <div
+                    className="ball"
+                    style={{
+                        "--delay": "-80s",
+                        "--size": "0.4",
+                        "--speed": "160s",
+                    }}
+                ></div>
+                <div
+                    className="ball"
+                    style={{
+                        "--delay": "-40s",
+                        "--size": "0.3",
+                        "--speed": "80s",
+                    }}
+                ></div>
+            </div>
             <main className="flex min-h-screen flex-col items-center p-6 justify-between">
                 <div className="flex flex-col items-center justify-center flex-grow">
                     <div className="relative flex items-center justify-center">
@@ -43,7 +58,6 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="mb-8 text-center">
-                    <p>Hello, World!</p>
                     <p>Data: {data}</p>
                 </div>
             </main>
