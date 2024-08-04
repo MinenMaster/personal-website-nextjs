@@ -6,7 +6,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch data from the API
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = "https://personal-website-nodejs-serverless-function-express.vercel.app/api"
     fetch(`${apiUrl}/hello`)
       .then(response => response.json())
       .then(data => setData(data.message))
