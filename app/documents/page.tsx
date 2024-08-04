@@ -26,7 +26,7 @@ export default function Home() {
     useEffect(() => {
         console.log("getHello called");
         getHello()
-            .then((data) => setData(data))
+            .then((data) => setData(data.message))
             .catch((error) => console.error(error));
         setupCanvasBackground(canvasRef.current);
     }, []);
@@ -43,7 +43,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="mb-8 text-center">
-                    <p>Data: {data.message}</p>
+                    <p>Data: {data}</p>
                 </div>
             </main>
         </>
