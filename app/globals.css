@@ -18,7 +18,7 @@ body {
 }
 
 #background {
-    background-color: rgb(var(--foreground-rgb));
+    background-color: rgb(var(--background-rgb));
     position: fixed;
     top: 0;
     left: 0;
