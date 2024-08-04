@@ -14,7 +14,7 @@ export const setupCanvasBackground = (canvas: HTMLCanvasElement | null) => {
 
     canvas.setAttribute("width", `${w}`);
     canvas.setAttribute("height", `${h}`);
-    //if (ctx) ctx.filter = 'blur(32px)';
+    if (ctx) ctx.filter = "blur(32px)";
 
     let time = 0;
     let count = 0;
