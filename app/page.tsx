@@ -4,15 +4,18 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  const [data, setData] = useState<string | null>(null);
+  const [data, setData] = useState("Loading...");
 
   useEffect(() => {
     // Fetch data from the API
     const apiUrl = "https://personal-website-nodejs-serverless-function-express.vercel.app/api"
     fetch(`${apiUrl}/hello`)
       .then(response => response.json())
-      .then(data => setData(data.message))
+      .then(data => console.log("data: " + data))
+      // .then(data => setData(data.message))
       .catch(error => console.error('Error fetching data:', error));
+    
+    console.log(data);
   }, []);
 
   return (
@@ -22,6 +25,7 @@ export default function Home() {
           Get started by editing this friggin binglinling file&nbsp;
           <code className="font-mono font-bold">app/page.tsx</code>
         </p>
+        <br/>
         <p className="fixed left-0 top-20 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Output of api fetch:&nbsp;
           <code className="font-mono font-bold">{data}</code>
