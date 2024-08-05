@@ -199,6 +199,9 @@ a {
     }
 }
 
-#about {
+#about,
+#projects,
+#hobbies,
+#contact {
     height: 5vw;
 }
