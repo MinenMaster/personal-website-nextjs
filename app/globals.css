@@ -5,6 +5,9 @@
 :root {
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 3, 7, 18;
+    --primary-rgb: 29, 78, 216;
+    --primary-light-rgb: 33, 92, 255;
+    --secondary-rgb: 255, 192, 33;
 }
 
 * {
@@ -124,6 +127,30 @@ body {
     height: 100%;
     background-color: rgb(var(--background-rgb));
     z-index: -20;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: rgb(var(--primary-light-rgb));
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
 }
 
 .scroll-down {
