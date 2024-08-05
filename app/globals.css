@@ -7,6 +7,10 @@
     --background-rgb: 3, 7, 18;
 }
 
+* {
+    scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -14,23 +18,15 @@
 }
 
 body {
+    overflow-x: hidden;
     color: rgb(var(--foreground-rgb));
+    background-color: rgb(var(--background-rgb));
 }
 
 @layer utilities {
     .text-balance {
         text-wrap: balance;
     }
-}
-
-#background {
-    background-color: rgb(var(--background-rgb));
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 }
 
 .ball {
@@ -123,11 +119,62 @@ body {
 .glow-container {
     overflow-x: hidden;
     overflow-y: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgb(var(--background-rgb));
     z-index: -1;
+}
+
+main {
+    z-index: 1;
+}
+
+.scroll-down {
+    margin-bottom: 48px;
+}
+
+.scroll-down:before,
+.scroll-down:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+}
+
+.scroll-down:before {
+    animation: down-arrow-before 2.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+.scroll-down:after {
+    animation: down-arrow-after 2.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+@keyframes down-arrow-before {
+    50% {
+        transform: rotate(45deg) translate(70%, 70%);
+    }
+    100% {
+        transform: rotate(45deg) translate(70%, 70%);
+    }
+}
+
+@keyframes down-arrow-after {
+    50% {
+        transform: rotate(45deg) translate(110%, 110%);
+        opacity: 0;
+    }
+    51% {
+        transform: rotate(45deg) translate(-130%, -130%);
+    }
+    100% {
+        transform: rotate(45deg) translate(-70%, -70%);
+        opacity: 1;
+    }
+}
+
+#about {
+    height: 80px;
 }
