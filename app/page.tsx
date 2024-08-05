@@ -61,13 +61,6 @@ export default function Home() {
                                     Dominik Meister
                                 </h1>
                             </div>
-                            {/* <div className="relative">
-                                <div id="title-bg-1" className=""></div>
-                                <div id="title-bg-2"></div>
-                                <h1 className="text-4xl text-white">
-                                    Greetings! I'm Dominik Meister
-                                </h1>
-                            </div> */}
                         </div>
                     </div>
                     <a href="#about">
