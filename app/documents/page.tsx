@@ -5,7 +5,6 @@ import NavBar from "../NavBar";
 
 export default function Home() {
     const [data, setData] = useState("Loading...");
-    const [activeSection, setActiveSection] = useState("");
 
     const URL =
         "https://personal-website-nodejs-serverless-function-express.vercel.app/api";
@@ -27,31 +26,6 @@ export default function Home() {
         getHello()
             .then((data) => setData(data.message))
             .catch((error) => console.error(error));
-    }, []);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = document.querySelectorAll("span");
-            let currentSection = "";
-
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 60) {
-                    const sectionId = section.getAttribute("id");
-                    if (sectionId) {
-                        currentSection = sectionId;
-                    }
-                }
-            });
-
-            setActiveSection(currentSection);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
     }, []);
 
     return (
