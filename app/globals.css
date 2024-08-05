@@ -18,6 +18,7 @@
 }
 
 body {
+    z-index: 0;
     overflow-x: hidden;
     color: rgb(var(--foreground-rgb));
     background-color: rgb(var(--background-rgb));
@@ -37,7 +38,7 @@ body {
     aspect-ratio: 1;
     width: calc(150% * var(--size));
 
-    background: linear-gradient(259.53deg, #1d4ed8 6.53%, #f55f0a 95.34%);
+    background: linear-gradient(259.53deg, #1d4ed8 8.53%, #f55f0a 96.34%);
     filter: blur(10vw);
 
     border-radius: 50%;
@@ -50,7 +51,7 @@ body {
     animation-delay: var(--delay);
     transform-origin: 50% 50%;
 
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 @keyframes loop {
@@ -122,11 +123,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgb(var(--background-rgb));
-    z-index: -1;
-}
-
-main {
-    z-index: 1;
+    z-index: -20;
 }
 
 .scroll-down {
@@ -176,5 +173,5 @@ main {
 }
 
 #about {
-    height: 80px;
+    height: 5vw;
 }
