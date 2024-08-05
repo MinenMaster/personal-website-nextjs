@@ -134,6 +134,10 @@ a {
     text-decoration: none;
     transition: 0.5s;
 
+    &:hover {
+        color: rgb(var(--primary-light-rgb));
+    }
+
     &::after {
         position: absolute;
         content: "";
@@ -151,6 +155,24 @@ a {
         transform: scaleX(1);
         transform-origin: left;
     }
+}
+
+.active {
+    color: rgb(var(--primary-light-rgb));
+    font-weight: 700;
+}
+
+.active::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgb(var(--primary-light-rgb));
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
 }
 
 .scroll-down {

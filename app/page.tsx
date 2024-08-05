@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import NavBar from "./NavBar";
 
 export default function Home() {
     const [data, setData] = useState("Loading...");
@@ -30,13 +31,16 @@ export default function Home() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = document.querySelectorAll("section");
+            const sections = document.querySelectorAll("span");
             let currentSection = "";
 
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
                 if (window.scrollY >= sectionTop - 60) {
-                    currentSection = section.getAttribute("id");
+                    const sectionId = section.getAttribute("id");
+                    if (sectionId) {
+                        currentSection = sectionId;
+                    }
                 }
             });
 
@@ -79,14 +83,13 @@ export default function Home() {
             <main className="flex flex-col items-center">
                 <div className="flex min-h-screen flex-col items-center justify-between">
                     <span id="home"></span>
-                    <nav className="flex justify-around p-4 m-4 backdrop-blur-md fixed top-0 z-10 border border-gray-600 rounded-full shadow-md max-w-screen-lg mx-auto mt-4">
-                        {/* Links Section */}
+                    {/* <nav className="flex justify-around p-4 m-4 backdrop-blur-md fixed top-0 z-10 border border-gray-600 rounded-full shadow-md max-w-screen-lg mx-auto mt-4">
                         <div className="items-center lg:flex ">
                             <a
-                                href="#home"
-                                className={`flex text-white hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
+                                href="/#home"
+                                className={`flex hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
                                     activeSection === "home"
-                                        ? "text-blue-500 font-bold"
+                                        ? "text-blue-500 font-bold active"
                                         : ""
                                 }`}
                             >
@@ -94,50 +97,55 @@ export default function Home() {
                             </a>
 
                             <a
-                                href="#about"
-                                className={`flex text-white hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
+                                href="/#about"
+                                className={`flex hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
                                     activeSection === "about"
-                                        ? "text-blue-500 font-bold"
+                                        ? "text-blue-500 font-bold active"
                                         : ""
                                 }`}
                             >
                                 About
                             </a>
                             <a
-                                href="#projects"
-                                className={`flex text-white hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
+                                href="/#projects"
+                                className={`flex hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
                                     activeSection === "projects"
-                                        ? "text-blue-500 font-bold"
+                                        ? "text-blue-500 font-bold active"
                                         : ""
                                 }`}
                             >
                                 Projects
                             </a>
                             <a
-                                href="#hobbies"
-                                className={`flex text-white hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
+                                href="/#hobbies"
+                                className={`flex hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
                                     activeSection === "hobbies"
-                                        ? "text-blue-500 font-bold"
+                                        ? "text-blue-500 font-bold active"
                                         : ""
                                 }`}
                             >
                                 Hobbies
                             </a>
                             <a
-                                href="#contact"
+                                href="/#contact"
                                 className={`flex text-white hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1 ${
                                     activeSection === "contact"
-                                        ? "text-blue-500 font-bold"
+                                        ? "text-blue-500 font-bold active"
                                         : ""
                                 }`}
                             >
                                 Contact
                             </a>
-                            <a className="flex text-white hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1">
+                            <a
+                                href="/documents"
+                                className="flex text-white hover:text-blue-500 cursor-pointer transition-colors duration-300 mx-1"
+                            >
                                 Documents
                             </a>
                         </div>
-                    </nav>
+                    </nav> */}
+
+                    <NavBar activeSection={activeSection} />
 
                     <div className="flex flex-col items-center justify-center flex-grow">
                         <div className="relative flex items-center justify-center">
@@ -163,7 +171,7 @@ export default function Home() {
                 </section>
                 <span id="projects"></span>
                 <section className="about-me flex flex-col justify-center p-6 z-[1]">
-                    <h2 className="text-3xl mb-4">Projects</h2>
+                    <h2 className="text-3xl mb-4">{"<p>Projects</p>"}</h2>
                     <p className="max-w-5xl">
                         Hello! I am Dominik, a passionate developer with a love
                         for creating innovative solutions. I enjoy working on
@@ -188,24 +196,6 @@ export default function Home() {
                         web development projects and learning new technologies.
                     </p>
                 </section>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
                 <br />
                 <br />
                 <br />
