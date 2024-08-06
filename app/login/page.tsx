@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const URL = "https://api.dominikmeister.com/api";
 
@@ -22,26 +23,30 @@ export default function Login() {
             const data = await res.json();
             localStorage.setItem("token", data.token);
         } else {
-            console.log(res);
-            alert("Login failed");
+            setError("Invalid username or password");
         }
     };
 
     return (
-        <form onSubmit={handleLogin}>
-            <input
-                type="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Username"
-            />
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-            />
-            <button type="submit">Login</button>
-        </form>
+        <>
+            <form onSubmit={handleLogin} className="flex flex-col">
+                <input
+                    type="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Username"
+                    className="w-40 bg-slate-600"
+                />
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                    className="w-40 bg-slate-600"
+                />
+                <button type="submit">Login</button>
+            </form>
+            {error && <p className="text-red-600">{error}</p>}
+        </>
     );
 }
