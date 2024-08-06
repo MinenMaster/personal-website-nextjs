@@ -6,9 +6,11 @@ export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    const URL = "https://api.dominikmeister.com/api";
+
     const handleLogin = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
-        const res = await fetch("/api/login", {
+        const res = await fetch(`${URL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
