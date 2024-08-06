@@ -8,8 +8,7 @@ export default function Home() {
     const [data, setData] = useState("Loading...");
     const [activeSection, setActiveSection] = useState("");
 
-    const URL =
-        "https://personal-website-nodejs-serverless-function-express.vercel.app/api";
+    const URL = "https://api.dominikmeister.com/api";
 
     const slugs = [
         "typescript",
