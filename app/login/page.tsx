@@ -1,10 +1,10 @@
+"use client";
+
 import { useState } from "react";
-import { useRouter } from "next/router";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const router = useRouter();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -19,7 +19,6 @@ export default function Login() {
         if (res.ok) {
             const data = await res.json();
             localStorage.setItem("token", data.token);
-            router.push("/documents");
         } else {
             alert("Login failed");
         }
