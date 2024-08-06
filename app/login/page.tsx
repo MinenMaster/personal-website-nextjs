@@ -20,6 +20,7 @@ export default function Login() {
             const data = await res.json();
             localStorage.setItem("token", data.token);
         } else {
+            console.log(res);
             alert("Login failed");
         }
     };
