@@ -45,7 +45,7 @@ export default function Documents() {
                         </div>
                     </div>
                     <div className="mb-8 text-center">
-                        <p>Data: ...</p>^
+                        <p>Data: ...</p>
                         {response.blobs ? (
                             response.blobs.map((blob) => (
                                 <a key={blob.pathname} href={blob.downloadUrl}>
