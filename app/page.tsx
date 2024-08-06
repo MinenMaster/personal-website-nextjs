@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
+import IconCloud from "./IconCloud";
 
 export default function Home() {
     const [data, setData] = useState("Loading...");
@@ -9,6 +10,28 @@ export default function Home() {
 
     const URL =
         "https://personal-website-nodejs-serverless-function-express.vercel.app/api";
+
+    const slugs = [
+        "typescript",
+        "javascript",
+        "python",
+        "java",
+        "react",
+        "html5",
+        "css3",
+        "nodedotjs",
+        "express",
+        "nextdotjs",
+        "amazonaws",
+        "postgresql",
+        "vercel",
+        "docker",
+        "git",
+        "github",
+        "gitlab",
+        "visualstudiocode",
+        "mysql",
+    ];
 
     async function getHello() {
         const response = await fetch(`${URL}/hello`);
@@ -98,20 +121,27 @@ export default function Home() {
                     </a>
                 </div>
                 <span id="about"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1]">
-                    <h2 className="text-3xl mb-4">about me.</h2>
-                    <p className="max-w-5xl">
-                        Hello! I am Dominik, a passionate developer with a love
-                        for creating innovative solutions. I enjoy working on
-                        web development projects and learning new technologies.
-                    </p>
+                <section className="about-me flex flex-row justify-center p-6 z-[1] max-w-4xl">
+                    <div className="flex-col">
+                        <h2 className="text-3xl mb-4">about me.</h2>
+                        <p className="">
+                            Hello! I am Dominik, a passionate developer with a
+                            love for creating innovative solutions. I enjoy
+                            working on web development projects and learning new
+                            technologies.
+                        </p>
+                    </div>
+
+                    <div className="relative flex max-w-[32rem] items-center justify-center overflow-hidden rounded-lg px-10 pb-10">
+                        <IconCloud iconSlugs={slugs} />
+                    </div>
                 </section>
                 <span id="projects"></span>
                 <section className="about-me flex flex-col justify-center p-6 z-[1]">
                     <h2 className="text-3xl mb-4">
                         projects i&apos;ve worked on.
                     </h2>
-                    <p className="max-w-5xl">
+                    <p className="max-w-4xl">
                         Hello! I am Dominik, a passionate developer with a love
                         for creating innovative solutions. I enjoy working on
                         web development projects and learning new technologies.
@@ -120,7 +150,7 @@ export default function Home() {
                 <span id="hobbies"></span>
                 <section className="about-me flex flex-col justify-center p-6 z-[1]">
                     <h2 className="text-3xl mb-4">my hobbies.</h2>
-                    <p className="max-w-5xl">
+                    <p className="max-w-4xl">
                         Hello! I am Dominik, a passionate developer with a love
                         for creating innovative solutions. I enjoy working on
                         web development projects and learning new technologies.
@@ -129,7 +159,7 @@ export default function Home() {
                 <span id="contact"></span>
                 <section className="about-me flex flex-col justify-center p-6 z-[1]">
                     <h2 className="text-3xl mb-4">let&apos;s connect.</h2>
-                    <p className="max-w-5xl">
+                    <p className="max-w-4xl">
                         Hello! I am Dominik, a passionate developer with a love
                         for creating innovative solutions. I enjoy working on
                         web development projects and learning new technologies.
