@@ -3,17 +3,17 @@
 import { useState } from "react";
 
 export default function Login() {
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = async (e: { preventDefault: () => void; }) => {
+    const handleLogin = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
         const res = await fetch("/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ username, password }),
         });
 
         if (res.ok) {
@@ -27,10 +27,10 @@ export default function Login() {
     return (
         <form onSubmit={handleLogin}>
             <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
+                type="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Username"
             />
             <input
                 type="password"
