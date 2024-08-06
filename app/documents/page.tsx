@@ -1,32 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { list } from "@vercel/blob";
 import NavBar from "../NavBar";
 
-export default function Home() {
-    const [data, setData] = useState("Loading...");
+export default function Documents() {
+    const URL = "https://api.dominikmeister.com/api";
 
-    const URL =
-        "https://personal-website-nodejs-serverless-function-express.vercel.app/api";
-
-    async function getHello() {
-        const response = await fetch(`${URL}/hello`);
-
-        if (!response.ok) {
-            throw new Error("An error occured while fetching");
-        }
-
-        const data = await response.json();
-        console.log(data);
-        return data;
-    }
-
-    useEffect(() => {
-        console.log("getHello called");
-        getHello()
-            .then((data) => setData(data.message))
-            .catch((error) => console.error(error));
-    }, []);
+    const response = list();
 
     return (
         <>
@@ -43,7 +24,12 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="mb-8 text-center">
-                        <p>Data: {data}</p>
+                        <p>Data: ...</p>^
+                        {response.blobs.map((blob) => (
+                            <a key={blob.pathname} href={blob.downloadUrl}>
+                                {blob.pathname}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </main>
