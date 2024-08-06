@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { list } from "@vercel/blob";
 import NavBar from "../NavBar";
 
-export default function Documents() {
+export default async function Documents() {
     const URL = "https://api.dominikmeister.com/api";
 
-    const response = list();
+    const response = await list();
 
     return (
         <>
