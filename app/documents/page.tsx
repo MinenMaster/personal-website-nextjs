@@ -7,7 +7,16 @@ import NavBar from "../NavBar";
 export default function Documents() {
     const URL = "https://api.dominikmeister.com/api";
 
-    const [response, setResponse] = useState({});
+    interface ResponseType {
+        blobs: BlobType[];
+    }
+    
+    interface BlobType {
+        pathname: string;
+        downloadUrl: string;
+    }
+    
+    const [response, setResponse] = useState<ResponseType>({ blobs: [] });
 
     async function getBlobs() {
         const response = await list();
@@ -37,11 +46,15 @@ export default function Documents() {
                     </div>
                     <div className="mb-8 text-center">
                         <p>Data: ...</p>^
-                        {response.blobs.map((blob) => (
-                            <a key={blob.pathname} href={blob.downloadUrl}>
-                                {blob.pathname}
-                            </a>
-                        ))}
+                        {response.blobs ? (
+                            response.blobs.map((blob) => (
+                                <a key={blob.pathname} href={blob.downloadUrl}>
+                                    {blob.pathname}
+                                </a>
+                            ))
+                        ) : (
+                            <p>Loading...</p>
+                        )}
                     </div>
                 </div>
             </main>
