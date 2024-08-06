@@ -7,13 +7,18 @@ import NavBar from "../NavBar";
 export default function Documents() {
     const URL = "https://api.dominikmeister.com/api";
 
+    const [response, setResponse] = useState({});
+
     async function getBlobs() {
         const response = await list();
+        console.log("response: " + response);
         return response;
     }
 
     useEffect(() => {
-        getBlobs();
+        getBlobs()
+            .then((data) => setResponse(data))
+            .catch((error) => console.error(error));
     }, []);
 
     return (
