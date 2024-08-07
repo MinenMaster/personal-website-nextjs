@@ -5,9 +5,9 @@ import { ReactNode, useEffect } from "react";
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
     const { isAuthenticated, loading } = useAuth();
     const router = useRouter();
-    const pathname = usePathname();
 
     useEffect(() => {
+        const pathname = usePathname();
         if (!loading && !isAuthenticated) {
             router.push("/login?from=" + pathname);
         }
