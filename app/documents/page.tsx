@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { list } from "@vercel/blob";
 import NavBar from "../components/NavBar";
 import ProtectedRoute from "../components/ProtectedRoute";
+import Footer from "../components/Footer";
 
 export default function Documents() {
     const URL = "https://api.dominikmeister.com/api";
@@ -30,6 +30,7 @@ export default function Documents() {
                         </div>
                     </div>
                 </main>
+                <Footer />
             </ProtectedRoute>
         </>
     );

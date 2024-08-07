@@ -1,0 +1,63 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
+
+const Footer = () => {
+    return (
+        <footer className="flex p-4 m-4 backdrop-blur-md bottom-0 z-10 border border-gray-600 rounded-full shadow-md max-w-screen-lg mx-auto mb-4">
+            <div className="flex items-center">
+                <div className="relative group w-8 h-8 flex justify-center items-center">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://en.wikipedia.org/wiki/MIT_License"
+                    >
+                        <Image
+                            src="/MIT_logo.svg"
+                            alt="MIT License Logo"
+                            width={32}
+                            height={32}
+                            className="cursor-pointer pointer-events-none"
+                        />
+                    </a>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
+                        This website is licensed with the MIT License
+                    </div>
+                </div>
+                <div className="relative group ml-[14px] mr-4 w-8 h-8 flex justify-center items-center">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/MinenMaster"
+                    >
+                        <FontAwesomeIcon
+                            icon={faGithub}
+                            className="text-2xl cursor-pointer"
+                        />
+                    </a>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
+                        View my GitHub Account
+                    </div>
+                </div>
+                <div className="relative group flex justify-center items-center h-8">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.linkedin.com/in/dominik-meister-1806382a3"
+                    >
+                        <FontAwesomeIcon
+                            icon={faLinkedin}
+                            className="text-2xl cursor-pointer"
+                        />
+                    </a>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
+                        View my LinkedIn Profile
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

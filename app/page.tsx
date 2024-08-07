@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import IconCloud from "./components/IconCloud";
+import Footer from "./components/Footer";
 
 export default function Home() {
     const [data, setData] = useState("Loading...");
@@ -201,6 +202,7 @@ export default function Home() {
                 <br />
                 <p>Data: {data}</p>
             </main>
+            <Footer />
         </>
     );
 }
