@@ -30,6 +30,13 @@ body {
     overflow-x: hidden;
     color: rgb(var(--foreground-rgb));
     background-color: rgb(var(--background-rgb));
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
 }
 
 @layer utilities {
@@ -134,7 +141,7 @@ body {
     z-index: -20;
 }
 
-a {
+nav a {
     position: relative;
     text-decoration: none;
     transition: 0.5s;
