@@ -81,7 +81,7 @@ input {
     color: #e5e5e5;
 }
 button,
-#aLogin {
+.aLogin {
     margin-top: 16px;
     width: 100%;
     background-color: #ffffff;
@@ -98,7 +98,7 @@ button,
     }
 }
 
-#aLogin {
+.aLogin {
     text-align: center;
     padding: 15px 0;
     display: block;
