@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Portfolio-Website | Frontend
+
+This project is designed to be used in conjunction with a backend. If you wish to use it for your own website, you will need to set up your own backend.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Testing with Your Backend](#testing-with-your-backend)
+- [Creating Your Own Backend](#creating-your-own-backend)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Getting Started
 
-First, run the development server:
+These instructions will guide you through setting up the project to run on your local machine for development and testing purposes.
+
+## Prerequisites
+
+Make sure you have the following installed on your local machine:
+
+- [Node.js](https://nodejs.org/) (v14.x or later)
+- [npm](https://www.npmjs.com/) (v6.x or later)
+
+## Installation
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/nextjs-frontend-project.git
+cd nextjs-frontend-project
+npm install
+```
+
+## Running the Project
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+The project will be running at `http://localhost:3000`.
+
+## Testing with Your Backend
+
+If you don't know how to set up a backend for your website, just follow a tutorial like this one, for example: [How to create a backend API in Express JS](https://dev.to/bilal1718/how-to-create-a-backend-api-in-express-js-e0k)
+
+To test the front-end with your backend:
+
+1. Ensure your backend is running and accessible. 
+2. Update the API endpoints in the front-end project to match the URLs of your backend. In this project it is often defined in the files via `const URL = "example.com"`.
+3. Start the development server:
+
+```bash
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Creating Your Own Backend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If you wish to create your own backend, you will need to:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Develop your backend API using your preferred technology stack (e.g., Node.js, Python, Ruby on Rails, etc.). If you don't know how to set up a backend for your website, just follow a tutorial like this one, for example: [How to create a backend API in Express JS](https://dev.to/bilal1718/how-to-create-a-backend-api-in-express-js-e0k)
+3. Deploy your backend to a server or cloud service like for example [Vercel.com](https://vercel.com/).
+4. Update the front-end project to use the URLs of your deployed backend. In this project they are often defined within the files via `const URL = "example.com"`.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+If you would like to contribute to this project, please fork the repository, submit a pull request, and I'll look into it.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
