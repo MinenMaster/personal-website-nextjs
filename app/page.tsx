@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import NavBar from "./NavBar";
-import IconCloud from "./IconCloud";
+import NavBar from "./components/NavBar";
+import IconCloud from "./components/IconCloud";
 
 export default function Home() {
     const [data, setData] = useState("Loading...");

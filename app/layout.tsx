@@ -1,13 +1,11 @@
+"use client";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "./context/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-    title: "Portfolio | Dominik Meister",
-    description: "My personal portfolio website",
-};
 
 export default function RootLayout({
     children,
@@ -16,11 +14,18 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <title>Portfolio | Dominik Meister</title>
+                <meta
+                    name="description"
+                    content="My personal portfolio website"
+                />
+            </head>
             <body className={inter.className}>
                 <noscript>
                     You need to enable JavaScript to run this app.
                 </noscript>
-                {children}
+                <AuthProvider>{children}</AuthProvider>
             </body>
         </html>
     );
