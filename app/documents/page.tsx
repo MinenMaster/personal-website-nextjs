@@ -8,28 +8,7 @@ import ProtectedRoute from "../components/ProtectedRoute";
 export default function Documents() {
     const URL = "https://api.dominikmeister.com/api";
 
-    interface ResponseType {
-        blobs: BlobType[];
-    }
-
-    interface BlobType {
-        pathname: string;
-        downloadUrl: string;
-    }
-
-    const [response, setResponse] = useState<ResponseType>({ blobs: [] });
-
-    async function getBlobs() {
-        const response = await list();
-        console.log("response: " + response);
-        return response;
-    }
-
-    useEffect(() => {
-        getBlobs()
-            .then((data) => setResponse(data))
-            .catch((error) => console.error(error));
-    }, []);
+    useEffect(() => {}, []);
 
     return (
         <>
@@ -48,18 +27,6 @@ export default function Documents() {
                         </div>
                         <div className="mb-8 text-center">
                             <p>Data: ...</p>
-                            {response.blobs ? (
-                                response.blobs.map((blob) => (
-                                    <a
-                                        key={blob.pathname}
-                                        href={blob.downloadUrl}
-                                    >
-                                        {blob.pathname}
-                                    </a>
-                                ))
-                            ) : (
-                                <p>Loading...</p>
-                            )}
                         </div>
                     </div>
                 </main>
