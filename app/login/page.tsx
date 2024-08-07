@@ -3,8 +3,10 @@
 import { useState, Suspense } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useRouter, useSearchParams } from "next/navigation";
+import "./page.css";
 
 const LoginContent = () => {
+    const [isLoading, setIsLoading] = useState(true);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -18,6 +20,7 @@ const LoginContent = () => {
 
     const handleLogin = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
+
         const res = await fetch(`${URL}/login`, {
             method: "POST",
             headers: {
@@ -39,32 +42,40 @@ const LoginContent = () => {
 
     return (
         <>
-            <form onSubmit={handleLogin} className="flex flex-col">
-                <input
-                    type="username"
-                    value={username}
-                    onChange={(e) => {
-                        setUsername(e.target.value);
-                        setError("");
-                    }}
-                    placeholder="Username"
-                    className="w-40 bg-slate-600"
-                />
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => {
-                        setPassword(e.target.value);
-                        setError("");
-                    }}
-                    placeholder="Password"
-                    className="w-40 bg-slate-600"
-                />
-                <button type="submit" className="w-40">
-                    Login
-                </button>
-            </form>
-            {error && <p className="text-red-600">{error}</p>}
+            <div className="background">
+                <div className="shape"></div>
+                <div className="shape"></div>
+            </div>
+            <main className="flex flex-col items-center w-[100vw]">
+                <form onSubmit={handleLogin}>
+                    <h1>Login</h1>
+
+                    <label htmlFor="username">Username</label>
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={(e) => {
+                            setUsername(e.target.value);
+                            setError("");
+                        }}
+                        placeholder="Username"
+                        id="username"
+                    />
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                            setError("");
+                        }}
+                        placeholder="Password"
+                        id="password"
+                    />
+                    <button type="submit">Login</button>
+                </form>
+                {error && <p className="text-red-600">{error}</p>}
+            </main>
         </>
     );
 };
