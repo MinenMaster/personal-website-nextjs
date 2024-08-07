@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             if (token) {
                 try {
                     const res = await fetch(
-                        "https://api.dominikmeister.com/api/verify-token",
+                        "https://api.dominikmeister.com/api/auth",
                         {
                             method: "POST",
                             headers: {
