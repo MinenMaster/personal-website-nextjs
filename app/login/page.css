@@ -80,7 +80,8 @@ input {
 ::placeholder {
     color: #e5e5e5;
 }
-button {
+button,
+#aLogin {
     margin-top: 16px;
     width: 100%;
     background-color: #ffffff;
@@ -94,5 +95,19 @@ button {
 
     &:hover {
         background-color: #cccccc;
+    }
+}
+
+#aLogin {
+    text-align: center;
+    padding: 15px 0;
+    display: block;
+
+    &:hover {
+        color: black;
+    }
+
+    &::after {
+        content: none;
     }
 }

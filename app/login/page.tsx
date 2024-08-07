@@ -73,7 +73,7 @@ const LoginContent = () => {
                         id="password"
                     />
                     <button type="submit">Login</button>
-                    <button>Back</button>
+                    <a className="aLogin" href="/">Back</a>
                 </form>
                 {error && <p className="text-red-600">{error}</p>}
             </main>
