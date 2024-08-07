@@ -17,24 +17,25 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(true);
     const router = useRouter();
 
+    const URL = "https://api.dominikmeister.com/api";
+
     useEffect(() => {
         const checkAuth = async () => {
             const token = localStorage.getItem("token");
             if (token) {
                 try {
-                    const res = await fetch(
-                        "https://api.dominikmeister.com/api/auth",
-                        {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                                Authorization: `Bearer ${token}`,
-                            },
-                        }
-                    );
+                    const res = await fetch(`${URL}/auth`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            authorization: `Bearer ${token}`,
+                        },
+                    });
+
                     if (res.ok) {
                         setIsAuthenticated(true);
                     } else {
+                        console.log("res: ", res);
                         localStorage.removeItem("token");
                         setIsAuthenticated(false);
                     }
