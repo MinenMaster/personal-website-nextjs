@@ -22,7 +22,7 @@ const Footer = () => {
                         />
                     </a>
                     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
-                        This website is licensed with the MIT License
+                        This website is licensed using the MIT License
                     </div>
                 </div>
                 <div className="relative group ml-[14px] mr-4 w-8 h-8 flex justify-center items-center">
