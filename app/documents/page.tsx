@@ -131,6 +131,12 @@ export default function Documents() {
                             </a>
                         ))}
                     </div>
+                    <button
+                        onClick={downloadAllDocuments}
+                        className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition"
+                    >
+                        Download All Documents as ZIP
+                    </button>
                 </main>
                 <Footer />
             </ProtectedRoute>
