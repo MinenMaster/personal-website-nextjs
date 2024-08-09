@@ -38,8 +38,10 @@ const LoginContent = () => {
             const redirectTo = from || "/";
             router.push(redirectTo);
         } else {
-            setError("Invalid username or password");
+            setError("Invalid credentials");
         }
+
+        setLoading(false);
     };
 
     useEffect(() => {
@@ -78,13 +80,19 @@ const LoginContent = () => {
                         placeholder="Password"
                         id="password"
                     />
-                    <button className="buttonLogin" type="submit">Login</button>
+                    {error && <p className="text-red-600">{error}</p>}
+                    <button className="buttonLogin" type="submit">
+                        Login
+                    </button>
                     <a className="aLogin" href="/">
                         Back
                     </a>
                 </form>
-                {error && <p className="text-red-600">{error}</p>}
-                {loading && (<div className="loaderBackground"><div className="loader"></div></div>)}
+                {loading && (
+                    <div className="loaderBackground">
+                        <div className="loader"></div>
+                    </div>
+                )}
             </main>
         </>
     );
