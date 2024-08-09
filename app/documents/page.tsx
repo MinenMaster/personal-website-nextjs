@@ -23,15 +23,15 @@ export default function Documents() {
         if (token) {
             try {
                 const res = await fetch(`${URL}/blobs/secure/${name}`, {
-                    method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        authorization: `Bearer ${token}`,
+                        Authorization: `Bearer ${token}`,
                     },
                 });
 
                 if (res.ok) {
                     const data = await res.json();
+                    console.log(res);
                     setUrls((prevUrls) => ({
                         ...prevUrls,
                         [name]: data.url,

@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
-                            authorization: `Bearer ${token}`,
+                            Authorization: `Bearer ${token}`,
                         },
                     });
 
