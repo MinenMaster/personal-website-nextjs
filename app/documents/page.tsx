@@ -49,8 +49,12 @@ export default function Documents() {
     }
 
     useEffect(() => {
-        getDocument("sample.pdf");
-        getDocument("cv.pdf");
+        const getAllDocuments = async () => {
+            await getDocument("sample.pdf");
+            await getDocument("cv.pdf");
+        };
+
+        getAllDocuments();
     }, []);
 
     return (
