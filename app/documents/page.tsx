@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import NavBar from "../components/NavBar";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Footer from "../components/Footer";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 
 type Urls = {
     [key: string]: string;
@@ -62,12 +64,35 @@ export default function Documents() {
         },
     ];
 
+    async function downloadAllDocuments() {
+        const zip = new JSZip();
+
+        for (const doc of documents) {
+            const url = urls[doc.name];
+            if (url) {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                zip.file(doc.name, blob);
+            }
+        }
+
+        const content = await zip.generateAsync({ type: "blob" });
+        saveAs(content, "Dominik_Meister-Documents.zip");
+    }
+
     useEffect(() => {
         const getAllDocuments = async () => {
             for (const doc of documents) {
                 await getDocument(doc.name);
             }
         };
+
+        // or
+
+        // const getAllDocuments = async () => {
+        //     const promises = documents.map((doc) => getDocument(doc.name));
+        //     await Promise.all(promises);
+        // };
 
         getAllDocuments();
     }, []);
