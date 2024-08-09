@@ -48,10 +48,25 @@ export default function Documents() {
         setLoading(false);
     }
 
+    const documents = [
+        {
+            name: "sample.pdf",
+            title: "Sample Document",
+            description: "This is a sample document for testing purposes.",
+        },
+        {
+            name: "cv.pdf",
+            title: "Curriculum Vitae",
+            description:
+                "My personal CV with professional and academic details.",
+        },
+    ];
+
     useEffect(() => {
         const getAllDocuments = async () => {
-            await getDocument("sample.pdf");
-            await getDocument("cv.pdf");
+            for (const doc of documents) {
+                await getDocument(doc.name);
+            }
         };
 
         getAllDocuments();
@@ -75,11 +90,21 @@ export default function Documents() {
                         </div>
                     </div>
                     <div className="mb-8 text-center flex-col">
-                        <button onClick={() => console.log(urls)}>LOG</button>
-                        <br />
-                        <a href={urls["sample.pdf"]}>sample.pdf</a>
-                        <br />
-                        <a href={urls["cv.pdf"]}>cv.pdf</a>
+                        {documents.map((doc) => (
+                            <a href={urls[doc.name]}>
+                                <div
+                                    key={doc.name}
+                                    className="flex flex-col p-4 m-4 border border-gray-600 rounded-2xl max-w-screen-lg mx-auto mt-4"
+                                >
+                                    <h2 className="text-2xl font-semibold mb-2">
+                                        {doc.title}
+                                    </h2>
+                                    <p className="text-gray-600 mb-4">
+                                        {doc.description}
+                                    </p>
+                                </div>
+                            </a>
+                        ))}
                     </div>
                 </main>
                 <Footer />
