@@ -32,7 +32,10 @@ export default function Documents() {
 
                 if (res.ok) {
                     const data = await res.json();
-                    setUrls({ ...urls, [name]: data.url });
+                    setUrls((prevUrls) => ({
+                        ...prevUrls,
+                        [name]: data.url,
+                    }));
                 } else {
                     console.error("Couldn't fetch for a document: ", res);
                     setError("Couldn't fetch for a document");
