@@ -71,7 +71,7 @@ export default function Documents() {
                         <button onClick={() => console.log(urls)}>LOG</button>
                         <br />
                         <a href={urls["sample.pdf"]}>sample.pdf</a>
-                        <a href={urls["sample.pdf"]}>sample.pdf</a>
+                        <a href={urls["cv.pdf"]}>sample.pdf</a>
                     </div>
                 </main>
                 <Footer />
