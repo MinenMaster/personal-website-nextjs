@@ -67,11 +67,12 @@ export default function Documents() {
                             </div>
                         </div>
                     </div>
-                    <div className="mb-8 text-center">
+                    <div className="mb-8 text-center flex-col">
                         <button onClick={() => console.log(urls)}>LOG</button>
                         <br />
                         <a href={urls["sample.pdf"]}>sample.pdf</a>
-                        <a href={urls["cv.pdf"]}>sample.pdf</a>
+                        <br />
+                        <a href={urls["cv.pdf"]}>cv.pdf</a>
                     </div>
                 </main>
                 <Footer />
