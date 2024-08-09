@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useState, Suspense, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useRouter, useSearchParams } from "next/navigation";
 import "./page.css";
@@ -8,7 +8,7 @@ import "./page.css";
 const LoginContent = () => {
     const { login } = useAuth();
     const router = useRouter();
-    const [isLoading, setIsLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -20,6 +20,8 @@ const LoginContent = () => {
 
     const handleLogin = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
+
+        setLoading(true);
 
         const res = await fetch(`${URL}/login`, {
             method: "POST",
@@ -40,13 +42,17 @@ const LoginContent = () => {
         }
     };
 
+    useEffect(() => {
+        setLoading(false);
+    }, []);
+
     return (
         <>
             <div className="background">
                 <div className="shape"></div>
                 <div className="shape"></div>
             </div>
-            <main className="flex flex-col items-center w-[100vw]">
+            <main className="flex flex-col items-center w-screen h-screen">
                 <form onSubmit={handleLogin}>
                     <h1>Login</h1>
 
@@ -72,10 +78,13 @@ const LoginContent = () => {
                         placeholder="Password"
                         id="password"
                     />
-                    <button type="submit">Login</button>
-                    <a className="aLogin" href="/">Back</a>
+                    <button className="buttonLogin" type="submit">Login</button>
+                    <a className="aLogin" href="/">
+                        Back
+                    </a>
                 </form>
                 {error && <p className="text-red-600">{error}</p>}
+                {loading && (<div className="loaderBackground"><div className="loader"></div></div>)}
             </main>
         </>
     );
@@ -83,7 +92,13 @@ const LoginContent = () => {
 
 const Login = () => {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+            fallback={
+                <div className="loaderBackground">
+                    <div className="loader"></div>
+                </div>
+            }
+        >
             <LoginContent />
         </Suspense>
     );

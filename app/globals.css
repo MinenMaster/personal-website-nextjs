@@ -45,6 +45,31 @@ main {
     }
 }
 
+.loader {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: rgb(var(--primary-rgb)) #00000000;
+    animation: l1 1s infinite;
+}
+@keyframes l1 {
+    to {
+        transform: rotate(0.5turn);
+    }
+}
+
+.loaderBackground {
+    display: flex;
+    z-index: 10;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(0.2rem);
+}
+
 .ball {
     --delay: 0s;
     --size: 0.35;

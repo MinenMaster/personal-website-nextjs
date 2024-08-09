@@ -14,7 +14,11 @@ const ProtectedRoute = ({ children }: { children: ReactNode }) => {
     }, [isAuthenticated, loading, router]);
 
     if (loading || !isAuthenticated) {
-        return <p>Loading...</p>;
+        return (
+            <div className="loaderBackground">
+                <div className="loader"></div>
+            </div>
+        );
     }
 
     return children;
