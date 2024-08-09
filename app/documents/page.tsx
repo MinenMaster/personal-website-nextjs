@@ -7,6 +7,8 @@ import ProtectedRoute from "../components/ProtectedRoute";
 import Footer from "../components/Footer";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 type Urls = {
     [key: string]: string;
@@ -115,6 +117,17 @@ export default function Documents() {
                         </div>
                     </div>
                     <div className="mb-8 text-center flex-col">
+                        <button
+                            onClick={downloadAllDocuments}
+                            className="downloadButton"
+                        >
+                            <FontAwesomeIcon
+                                icon={faCloudArrowDown}
+                                size="xl"
+                                className="cursor-pointer"
+                            />{" "}
+                            Download all documents as .zip
+                        </button>
                         {documents.map((doc, index) => (
                             <a href={urls[doc.name]} key={doc.name}>
                                 <div className="flex flex-col p-4 m-4 border border-gray-600 rounded-2xl max-w-screen-lg mx-auto mt-4">
@@ -128,12 +141,6 @@ export default function Documents() {
                             </a>
                         ))}
                     </div>
-                    <button
-                        onClick={downloadAllDocuments}
-                        className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition"
-                    >
-                        Download All Documents as ZIP
-                    </button>
                 </main>
                 <Footer />
             </ProtectedRoute>

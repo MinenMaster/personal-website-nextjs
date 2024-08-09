@@ -45,6 +45,21 @@ main {
     }
 }
 
+.downloadButton {
+    background-color: rgb(var(--primary-rgb));
+    color: rgb(var(--foreground-rgb));
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+
+    &:hover {
+        background-color: rgb(var(--primary-light-rgb));
+    }
+}
+
 .loader {
     width: 4rem;
     height: 4rem;
