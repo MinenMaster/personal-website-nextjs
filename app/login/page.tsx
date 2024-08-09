@@ -6,12 +6,12 @@ import { useRouter, useSearchParams } from "next/navigation";
 import "./page.css";
 
 const LoginContent = () => {
+    const { login } = useAuth();
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(true);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const { login } = useAuth();
-    const router = useRouter();
 
     const URL = "https://api.dominikmeister.com/api";
 
