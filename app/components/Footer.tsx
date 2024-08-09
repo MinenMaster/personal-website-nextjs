@@ -11,7 +11,7 @@ const Footer = () => {
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href="https://en.wikipedia.org/wiki/MIT_License"
+                        href="https://github.com/MinenMaster/personal-website-nextjs/blob/main/LICENSE.md"
                     >
                         <Image
                             src="/MIT_logo.svg"
@@ -21,7 +21,9 @@ const Footer = () => {
                             className="cursor-pointer pointer-events-none"
                         />
                     </a>
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
+                    <div className="text-center absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
+                        Copyright &copy; 2024 Dominik Meister
+                        <br />
                         This website is licensed using the MIT License
                     </div>
                 </div>
