@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
     const [data, setData] = useState("");
-    const [activeSection, setActiveSection] = useState("");
+    const [activeSection, setActiveSection] = useState("home");
 
     const URL = "https://api.dominikmeister.com/api";
 
