@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import NavBar from "../components/NavBar";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Footer from "../components/Footer";
@@ -15,7 +14,6 @@ type Urls = {
 };
 
 export default function Documents() {
-    const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [urls, setUrls] = useState<Urls>({});
@@ -48,7 +46,6 @@ export default function Documents() {
                 setError("No token found");
             }
         }
-        setLoading(false);
     }
 
     const documents = [
@@ -96,6 +93,8 @@ export default function Documents() {
         // };
 
         getAllDocuments();
+
+        setLoading(false);
     }, []);
 
     return (
@@ -115,7 +114,7 @@ export default function Documents() {
                             </div>
                         </div>
                     </div>
-                    <div className="mb-8 text-center flex-col">
+                    <div className="mb-8 text-center">
                         <button
                             onClick={downloadAllDocuments}
                             className="downloadButton"
@@ -127,9 +126,10 @@ export default function Documents() {
                             />{" "}
                             Download all documents as .zip
                         </button>
+                        {loading && <div className="loader"></div>}
                         {documents.map((doc, index) => (
                             <a href={urls[doc.name]} key={doc.name}>
-                                <div className="flex flex-col p-4 m-4 border border-gray-600 rounded-2xl max-w-screen-lg mx-auto mt-4">
+                                <div className="flex flex-col p-4 m-4 border border-gray-600 rounded-2xl max-w-screen-lg mt-4">
                                     <h2 className="text-2xl font-semibold mb-2">
                                         {doc.title}
                                     </h2>
