@@ -35,7 +35,6 @@ export default function Documents() {
 
                 if (res.ok) {
                     const data = await res.json();
-                    console.log(res);
                     setUrls((prevUrls) => ({
                         ...prevUrls,
                         [name]: data.url,
