@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Key } from "react";
 import NavBar from "./components/NavBar";
-import IconCloud from "./components/IconCloud";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -11,27 +10,69 @@ export default function Home() {
 
     const URL = "https://api.dominikmeister.com/api";
 
-    const slugs = [
-        "typescript",
-        "javascript",
-        "python",
-        "java",
-        "react",
-        "html5",
-        "css3",
-        "nodedotjs",
-        "express",
-        "nextdotjs",
-        "amazonaws",
-        "postgresql",
-        "vercel",
-        "docker",
-        "git",
-        "github",
-        "gitlab",
-        "visualstudiocode",
-        "mysql",
+    const devicons = [
+        "typescript-plain colored",
+        "javascript-plain colored",
+        "python-plain colored",
+        "java-plain colored",
+        "cplusplus-plain colored",
+        "csharp-plain colored",
+        "react-original colored",
+        "html5-plain colored",
+        "css3-plain colored",
+        "nodejs-plain colored",
+        "express-original",
+        "nextjs-plain",
+        "amazonwebservices-plain-wordmark",
+        "postgresql-plain colored",
+        "mysql-original colored",
+        "vercel-original",
+        "docker-plain colored",
+        "git-plain colored",
+        "github-original",
+        "gitlab-plain colored",
+        "vscode-plain colored",
     ];
+
+    const programmingLanguages = [
+        "typescript-plain colored",
+        "javascript-plain colored",
+        "python-plain colored",
+        "java-plain colored",
+        "cplusplus-plain colored",
+        "csharp-plain colored",
+    ];
+
+    const frontendBackendTechnologies = [
+        "react-original colored",
+        "nextjs-plain",
+        "html5-plain colored",
+        "css3-plain colored",
+        "nodejs-plain colored",
+        "express-original",
+        "postgresql-plain colored",
+        "mysql-original colored",
+    ];
+
+    const misc = [
+        "amazonwebservices-plain-wordmark",
+        "vercel-original",
+        "docker-plain colored",
+        "git-plain colored",
+        "github-original",
+        "gitlab-plain colored",
+        "vscode-plain colored",
+    ];
+
+    const DeviconList = ({ listName }: { listName: string[] }) => {
+        return (
+            <div className="flex space-x-4">
+                {listName.map((icon: any, index: Key | null | undefined) => (
+                    <i key={index} className={`devicon-${icon} text-4xl`}></i>
+                ))}
+            </div>
+        );
+    };
 
     async function getHello() {
         const response = await fetch(`${URL}/hello`);
@@ -110,8 +151,8 @@ export default function Home() {
                     <div className="flex flex-col items-center justify-center flex-grow">
                         <div className="relative flex items-center justify-center">
                             <div className="relative flex place-items-center text-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-                                <h1 className="text-4xl text-white">
-                                    Greetings! I&apos;m Dominik Meister
+                                <h1 className="text-5xl text-white">
+                                    Greetings! I'm Dominik Meister
                                 </h1>
                             </div>
                         </div>
@@ -121,58 +162,44 @@ export default function Home() {
                     </a>
                 </div>
                 <span id="about"></span>
-                <section className="about-me flex flex-row justify-center p-6 z-[1] max-w-4xl">
+                <section className="about-me flex flex-col justify-center p-6 z-[1] max-w-4xl border border-gray-600 rounded-2xl">
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
-                        <p className="">
-                            Hello! I am Dominik, a passionate developer with a
+                        <p>
+                            Hello! I'm Dominik, a passionate developer with a
                             love for creating innovative solutions. I enjoy
                             working on web development projects and learning new
                             technologies.
                         </p>
                     </div>
-
-                    <div className="relative flex max-w-[32rem] items-center justify-center overflow-hidden rounded-lg px-10 pb-10">
-                        <IconCloud iconSlugs={slugs} />
-                    </div>
+                    <DeviconList listName={misc} />
                 </section>
                 <span id="projects"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1]">
-                    <h2 className="text-3xl mb-4">
-                        projects i&apos;ve worked on.
-                    </h2>
-                    <p className="max-w-4xl">
-                        Hello! I am Dominik, a passionate developer with a love
-                        for creating innovative solutions. I enjoy working on
-                        web development projects and learning new technologies.
-                    </p>
-                </section>
-                <span id="hobbies"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1]">
-                    <h2 className="text-3xl mb-4">my hobbies.</h2>
-                    <p className="max-w-4xl">
-                        Hello! I am Dominik, a passionate developer with a love
+                <section className="about-me flex flex-col justify-center p-6 z-[1] max-w-4xl border border-gray-600 rounded-2xl">
+                    <h2 className="text-3xl mb-4">projects i've worked on.</h2>
+                    <p>
+                        Hello! I'm Dominik, a passionate developer with a love
                         for creating innovative solutions. I enjoy working on
                         web development projects and learning new technologies.
                     </p>
                 </section>
                 <span id="contact"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1]">
-                    <h2 className="text-3xl mb-4">let&apos;s connect.</h2>
-                    <p className="max-w-4xl">
-                        Hello! I am Dominik, a passionate developer with a love
+                <section className="about-me flex flex-col justify-center p-6 z-[1] max-w-4xl border border-gray-600 rounded-2xl">
+                    <h2 className="text-3xl mb-4">let's connect.</h2>
+                    <p>
+                        Hello! I'm Dominik, a passionate developer with a love
                         for creating innovative solutions. I enjoy working on
                         web development projects and learning new technologies.
                     </p>
                 </section>
-                <section>
-                    Who am I I am currently in my second year of apprenticeship
+                {/* <section>
+                    Who am I I'm currently in my second year of apprenticeship
                     as a computer scientist. My passion for technology drives me
                     to continually learn and develop my skills. When something
-                    interests me, I am highly capable of learning quickly and
+                    interests me, I'm highly capable of learning quickly and
                     thoroughly. My goal is to specialize in IT security in the
                     future, where I can leverage my skills and knowledge to
-                    protect and secure digital information. I am eager to
+                    protect and secure digital information. I'm eager to
                     continue growing as a developer and to contribute to
                     projects that challenge and inspire me. Hobbies In my free
                     time, I enjoy staying active and engaged in various
@@ -183,7 +210,16 @@ export default function Home() {
                     well-being. These hobbies not only provide a great balance
                     to my professional life but also keep me motivated and
                     energized
-                </section>
+                </section> */}
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
                 <br />
                 <br />
                 <br />

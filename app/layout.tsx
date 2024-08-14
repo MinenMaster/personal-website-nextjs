@@ -23,6 +23,11 @@ export default function RootLayout({
                     name="keywords"
                     content="Dominik Meister, dominikmeister, portfolio, developer, software engineer, full stack, frontend, backend, web, website, app, application, programming, coding, development, design, ux, ui, user experience, user interface, react, next.js, typescript, javascript, python, java, html5, css3, node.js, express, amazonaws, postgresql, vercel, docker, git, github, gitlab, visualstudiocode, mysql"
                 />
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+                />
             </head>
             <body className={inter.className}>
                 <noscript>
