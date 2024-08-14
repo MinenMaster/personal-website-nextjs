@@ -48,24 +48,47 @@ export default function Documents() {
         }
     }
 
-    const documents = [
-        {
-            name: "sample.pdf",
-            title: "Sample Document",
-            description: "This is a sample document for testing purposes.",
-        },
+    const allDocuments = [
         {
             name: "cv.pdf",
             title: "Curriculum Vitae",
             description:
                 "My personal CV with professional and academic details.",
         },
+        {
+            name: "zeugniss-gibb.pdf",
+            title: "School Report - gibb",
+            description: "My school report from the gibb.",
+        },
+        {
+            name: "zeugniss-bwd.pdf",
+            title: "School Report - BWD",
+            description: "My school report from the BWD.",
+        },
+        {
+            name: "abacus-finanzbuchhaltung.pdf",
+            title: "Abacus Certificate Financial Accounting",
+            description:
+                "My certificate for the Abacus Financial Accounting course.",
+        },
+        {
+            name: "abacus-debitorenbuchhaltung.pdf",
+            title: "Abacus Certificate Accounts Receivable",
+            description:
+                "My certificate for the Abacus Accounts Receivable course.",
+        },
+        {
+            name: "abacus-kreditorenbuchhaltung.pdf",
+            title: "Abacus Certificate Accounts Payable",
+            description:
+                "My certificate for the Abacus Accounts Payable course.",
+        },
     ];
 
     async function downloadAllDocuments() {
         const zip = new JSZip();
 
-        for (const doc of documents) {
+        for (const doc of allDocuments) {
             const url = urls[doc.name];
             if (url) {
                 const response = await fetch(url);
@@ -80,7 +103,7 @@ export default function Documents() {
 
     useEffect(() => {
         const getAllDocuments = async () => {
-            for (const doc of documents) {
+            for (const doc of allDocuments) {
                 await getDocument(doc.name);
             }
         };
@@ -88,7 +111,7 @@ export default function Documents() {
         // or
 
         // const getAllDocuments = async () => {
-        //     const promises = documents.map((doc) => getDocument(doc.name));
+        //     const promises = allDocuments.map((doc) => getDocument(doc.name));
         //     await Promise.all(promises);
         // };
 
@@ -127,7 +150,7 @@ export default function Documents() {
                             Download all documents as .zip
                         </button>
                         {loading && <div className="loader"></div>}
-                        {documents.map((doc, index) => (
+                        {allDocuments.map((doc, index) => (
                             <a
                                 href={urls[doc.name]}
                                 target="_blank"
