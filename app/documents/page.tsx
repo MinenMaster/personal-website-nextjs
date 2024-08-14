@@ -128,7 +128,11 @@ export default function Documents() {
                         </button>
                         {loading && <div className="loader"></div>}
                         {documents.map((doc, index) => (
-                            <a href={urls[doc.name]} key={doc.name}>
+                            <a
+                                href={urls[doc.name]}
+                                target="_blank"
+                                key={doc.name}
+                            >
                                 <div className="flex flex-col p-4 m-4 border border-gray-600 rounded-2xl max-w-screen-lg mt-4">
                                     <h2 className="text-2xl font-semibold mb-2">
                                         {doc.title}
