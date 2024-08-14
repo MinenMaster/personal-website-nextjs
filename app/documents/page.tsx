@@ -150,7 +150,7 @@ export default function Documents() {
                             Download all documents as .zip
                         </button>
                         {loading && <div className="loader"></div>}
-                        {allDocuments.map((doc, index) => (
+                        {allDocuments.map((doc) => (
                             <a
                                 href={urls[doc.name]}
                                 target="_blank"
