@@ -39,14 +39,6 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
                     Projects
                 </a>
                 <a
-                    href="/#hobbies"
-                    className={`flex cursor-pointer transition-colors duration-300 mx-1 ${
-                        activeSection === "hobbies" ? "active" : ""
-                    }`}
-                >
-                    Hobbies
-                </a>
-                <a
                     href="/#contact"
                     className={`flex text-white cursor-pointer transition-colors duration-300 mx-1 ${
                         activeSection === "contact" ? "active" : ""
