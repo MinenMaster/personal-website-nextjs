@@ -3,6 +3,7 @@
 import { useState, useEffect, Key } from "react";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
     const [data, setData] = useState("");
@@ -166,7 +167,7 @@ export default function Home() {
                     </a>
                 </div>
                 <span id="about"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1] max-w-4xl border border-gray-600 rounded-2xl">
+                <section className="about-me flex flex-col justify-center p-6 z-[1] w-[56rem] border border-gray-600 rounded-2xl">
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
                         <p>
@@ -196,7 +197,7 @@ export default function Home() {
                     <DeviconList listName={misc} />
                 </section>
                 <span id="projects"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1] max-w-4xl border border-gray-600 rounded-2xl">
+                <section className="about-me flex flex-col justify-center p-6 z-[1] w-[56rem] border border-gray-600 rounded-2xl">
                     <h2 className="text-3xl mb-4">
                         projects i&apos;ve worked on.
                     </h2>
@@ -208,14 +209,19 @@ export default function Home() {
                     </p>
                 </section>
                 <span id="contact"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1] max-w-4xl border border-gray-600 rounded-2xl">
+                <section className="about-me flex flex-col justify-center p-6 z-[1] w-[56rem] border border-gray-600 rounded-2xl">
                     <h2 className="text-3xl mb-4">let&apos;s connect.</h2>
                     <p>
-                        Hello! I&apos;m Dominik, a passionate developer with a
-                        love for creating innovative solutions. I enjoy working
-                        on web development projects and learning new
-                        technologies.
+                        Feel free to get in touch using the form below or
+                        sending an email to{" "}
+                        <u>
+                            <a href="mailto:dominik.s.meister@proton.me">
+                                dominik.s.meister@proton.me
+                            </a>
+                        </u>
+                        .
                     </p>
+                    <ContactForm />
                 </section>
                 {/* <section>
                     Who am I I&apos;m currently in my second year of apprenticeship
@@ -236,6 +242,69 @@ export default function Home() {
                     to my professional life but also keep me motivated and
                     energized
                 </section> */}
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
             </main>
             <Footer />
         </>
