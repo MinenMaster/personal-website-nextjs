@@ -170,8 +170,8 @@ export default function Home() {
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
                         <p>
-                            Hi, I&apos;m Dominik, I'm 17 years old, and I live
-                            in Kehrsatz. My dad is an IT specialist and a
+                            Hi, I&apos;m Dominik, I&apos;m 17 years old, and I
+                            live in Kehrsatz. My dad is an IT specialist and a
                             passionate tinkerer, and he tried to pass on his
                             love for technology to me at a young age. I first
                             started programming through Minecraft, where I
@@ -182,13 +182,13 @@ export default function Home() {
                         <p>
                             I enjoy taking on complex challenges with computers.
                             I like working on problems until I find the best
-                            solution. At school, I'm known for being helpful.
-                            Even if I don't know the perfect answer yet,
-                            I&apos;m always ready to help others with their
-                            tasks. I come from a big family where there&apos;s
-                            always something going on, and I often get to solve
-                            technical issues, whether it's for friends or
-                            family.
+                            solution. At school, I&apos;m known for being
+                            helpful. Even if I don&apos;t know the perfect
+                            answer yet, I&apos;m always ready to help others
+                            with their tasks. I come from a big family where
+                            there&apos;s always something going on, and I often
+                            get to solve technical issues, whether it&apos;s for
+                            friends or family.
                         </p>
                     </div>
                     <DeviconList listName={programmingLanguages} />
