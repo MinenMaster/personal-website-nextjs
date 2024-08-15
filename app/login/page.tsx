@@ -66,7 +66,7 @@ const LoginContent = () => {
                             setUsername(e.target.value);
                             setError("");
                         }}
-                        placeholder="Username"
+                        placeholder="Enter your username"
                         id="username"
                     />
                     <label htmlFor="password">Password</label>
@@ -77,7 +77,7 @@ const LoginContent = () => {
                             setPassword(e.target.value);
                             setError("");
                         }}
-                        placeholder="Password"
+                        placeholder="Enter your password"
                         id="password"
                     />
                     {error && <p className="text-red-600">{error}</p>}
