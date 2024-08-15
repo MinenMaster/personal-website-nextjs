@@ -32,11 +32,16 @@ body {
     background-color: rgb(var(--background-rgb));
     display: flex;
     flex-direction: column;
+    line-height: 1.5;
     min-height: 100vh;
 }
 
 main {
     flex-grow: 1;
+}
+
+p {
+    margin: 16px 0;
 }
 
 @layer utilities {
