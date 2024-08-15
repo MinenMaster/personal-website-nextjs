@@ -31,7 +31,7 @@ const ContactForm = () => {
             );
 
             if (res.ok) {
-                setSuccessMessage("Your message has been sent successfully!");
+                setSuccessMessage("Your message has been sent!");
                 setName("");
                 setEmail("");
                 setMessage("");
