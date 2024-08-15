@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 
 export default function Home() {
-    const [data, setData] = useState("");
     const [activeSection, setActiveSection] = useState("home");
 
     const URL = "https://api.dominikmeister.com/api";
@@ -74,25 +73,6 @@ export default function Home() {
             </div>
         );
     };
-
-    async function getHello() {
-        const response = await fetch(`${URL}/hello`);
-
-        if (!response.ok) {
-            throw new Error("An error occured while fetching");
-        }
-
-        const data = await response.json();
-        console.log(data);
-        return data;
-    }
-
-    useEffect(() => {
-        console.log("getHello called");
-        getHello()
-            .then((data) => setData(data.message))
-            .catch((error) => console.error(error));
-    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
