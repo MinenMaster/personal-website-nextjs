@@ -42,7 +42,6 @@ main {
 
 section p {
     margin: 16px 0;
-    line-height: 1.5;
 }
 
 @layer utilities {
