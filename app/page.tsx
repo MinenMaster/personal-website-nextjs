@@ -147,7 +147,7 @@ export default function Home() {
                     </a>
                 </div>
                 <span id="about"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1] w-[56rem] border border-gray-600 rounded-2xl">
+                <section className="about-me flex flex-col justify-center p-6 z-[1] max-max-w-[56rem] border border-gray-600 rounded-2xl">
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
                         <p>
@@ -177,7 +177,7 @@ export default function Home() {
                     <DeviconList listName={misc} />
                 </section>
                 <span id="projects"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1] w-[56rem] border border-gray-600 rounded-2xl">
+                <section className="about-me flex flex-col justify-center p-6 z-[1] max-w-[56rem] border border-gray-600 rounded-2xl">
                     <h2 className="text-3xl mb-4">
                         projects i&apos;ve worked on.
                     </h2>
@@ -189,7 +189,7 @@ export default function Home() {
                     </p>
                 </section>
                 <span id="contact"></span>
-                <section className="about-me flex flex-col justify-center p-6 z-[1] w-[56rem] border border-gray-600 rounded-2xl">
+                <section className="about-me flex flex-col justify-center p-6 z-[1] max-w-[56rem] border border-gray-600 rounded-2xl">
                     <h2 className="text-3xl mb-4">let&apos;s connect.</h2>
                     <p>
                         Feel free to get in touch using the form below or
