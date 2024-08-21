@@ -151,7 +151,7 @@ export default function Home() {
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
                         <p>
-                            Hi, I&apos;m Dominik, I&apos;m 17 years old, and I
+                            Hi, my name is Dominik, I&apos;m 17 years old, and I
                             live in Kehrsatz. My dad is an IT specialist and a
                             passionate tinkerer, and he tried to pass on his
                             love for technology to me at a young age. I first
