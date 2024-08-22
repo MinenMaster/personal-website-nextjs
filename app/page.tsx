@@ -81,7 +81,7 @@ export default function Home() {
 
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 60) {
+                if (window.scrollY >= sectionTop - 500) {
                     const sectionId = section.getAttribute("id");
                     if (sectionId) {
                         currentSection = sectionId;
