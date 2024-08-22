@@ -115,8 +115,6 @@ export default function Documents() {
         //     await Promise.all(promises);
         // };
 
-        // This is a test comment to see how the streak works on github and I accedently pushed it already
-
         getAllDocuments();
 
         setLoading(false);
