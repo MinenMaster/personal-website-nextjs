@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Footer = () => {
     return (
-        <footer className="flex p-4 m-4 mt-20 backdrop-blur-md bottom-0 z-10 border border-gray-600 rounded-full shadow-md max-w-screen-lg mx-auto mb-4">
+        <footer className="flex p-4 m-4 mt-20 backdrop-blur-md bottom-0 z-10 border border-gray-600 rounded-full shadow-md max-w-screen-lg mx-auto">
             <div className="flex items-center">
                 <div className="relative group w-8 h-8 flex justify-center items-center">
                     <a
