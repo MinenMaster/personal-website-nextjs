@@ -287,3 +287,70 @@ nav a {
 #contact {
     height: 5rem;
 }
+
+.projectsPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.projectBox {
+    background-size: cover;
+    background-position: center;
+    width: 49%;
+    height: 30vh;
+    margin-top: 2%;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projectBox:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.projectInfo {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-sizing: border-box;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.abstractButton {
+    background-color: #61dafb;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.abstractButton:hover {
+    background-color: #21a1f1;
+}
+
+@media (max-width: 768px) {
+    .projectBox {
+        width: 100%;
+    }
+    #about,
+    #projects,
+    #hobbies,
+    #contact {
+        height: 1rem;
+    }
+}
