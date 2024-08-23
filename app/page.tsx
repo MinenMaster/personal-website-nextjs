@@ -68,7 +68,7 @@ export default function Home() {
         return (
             <div className="flex space-x-4">
                 {listName.map((item: any, index: Key | null | undefined) => (
-                    <div className="relative group">
+                    <div key={index} className="relative group">
                         <i
                             key={index}
                             className={`devicon-${item.icon} text-4xl`}
