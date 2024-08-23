@@ -34,6 +34,7 @@ body {
     flex-direction: column;
     line-height: 1.5;
     min-height: 100vh;
+    width: 100vw;
 }
 
 main {
