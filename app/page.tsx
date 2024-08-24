@@ -89,13 +89,20 @@ export default function Home() {
 
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 500) {
+                if (window.scrollY >= sectionTop - 400) {
                     const sectionId = section.getAttribute("id");
                     if (sectionId) {
                         currentSection = sectionId;
                     }
                 }
             });
+
+            if (
+                window.innerHeight + window.scrollY >=
+                document.body.offsetHeight
+            ) {
+                currentSection = "contact";
+            }
 
             setActiveSection(currentSection);
         };
