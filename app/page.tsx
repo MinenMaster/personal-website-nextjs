@@ -9,8 +9,6 @@ import Projects from "./components/Projects";
 export default function Home() {
     const [activeSection, setActiveSection] = useState("home");
 
-    const URL = "https://api.dominikmeister.com/api";
-
     // const devicons = [
     //     "typescript-plain colored",
     //     "javascript-plain colored",
@@ -49,9 +47,7 @@ export default function Home() {
         { skill: "HTML5", icon: "html5-plain colored" },
         { skill: "CSS3", icon: "css3-plain colored" },
         { skill: "Node.js", icon: "nodejs-plain colored" },
-        { skill: "Express", icon: "express-original" },
         { skill: "PostgreSQL", icon: "postgresql-plain colored" },
-        { skill: "MySQL", icon: "mysql-original colored" },
     ];
 
     const misc = [
@@ -60,7 +56,6 @@ export default function Home() {
         { skill: "Kubernetes", icon: "kubernetes-plain colored" },
         { skill: "Git", icon: "git-plain colored" },
         { skill: "GitHub", icon: "github-original" },
-        { skill: "GitLab", icon: "gitlab-plain colored" },
         { skill: "VSCode", icon: "vscode-plain colored" },
     ];
 
@@ -219,8 +214,8 @@ export default function Home() {
                     <p>or</p>
                     <p>
                         Did I catch your interest and do you want to get to know
-                        more about me? Get in touch with me using this
-                        form or writing an email to{" "}
+                        more about me? Get in touch with me using this form or
+                        writing an email to{" "}
                         <u>
                             <a href="mailto:dominik.s.meister@proton.me">
                                 dominik.s.meister@proton.me
