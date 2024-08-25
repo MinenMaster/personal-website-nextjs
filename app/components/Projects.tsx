@@ -94,33 +94,32 @@ function Projects() {
 
     const projects = [
         {
-            title: "Project One",
-            description: "This is a brief description of Project One.",
-            tags: ["React", "Node.js", "CSS"],
-            imageUrl: "/projects/TowerDefense.png",
-            abstract: "IMS_Projekt-Abstract_TowerDefense.pdf",
-            githubUrl: "https://github.com/MinenMaster/TowerDefense",
-        },
-        {
-            title: "Project Two",
-            description: "This is a brief description of Project Two.",
-            tags: ["Vue.js", "Firebase", "Sass"],
+            title: "HomeAide",
+            description:
+                "A .NET MAUI application for managing home automations.",
+            icons: [
+                { skill: ".NET", icon: "dot-net-plain colored" },
+                { skill: "C#", icon: "csharp-plain colored" },
+            ],
             imageUrl: "/projects/HomeAide-Help.png",
             abstract: "IMS_Projekt-Abstract_HomeAide.pdf",
             githubUrl: "https://github.com/MinenMaster/HomeAide",
         },
         {
-            title: "Project Two",
-            description: "This is a brief description of Project Two.",
-            tags: ["Vue.js", "Firebase", "Sass"],
-            imageUrl: "/projects/TowerDefense.png",
-            abstract: "IMS_Projekt-Abstract_TowerDefense.pdf",
-            githubUrl: "https://github.com/MinenMaster/TowerDefense",
+            title: "Personal Website",
+            description: "My first personal website.",
+            icons: [
+                { skill: "HTML5", icon: "html5-plain colored" },
+                { skill: "CSS3", icon: "css3-plain colored" },
+            ],
+            imageUrl: "/projects/PersonalWebsite.png",
+            abstract: "IMS_Projekt-Abstract_PersonalWebsite.pdf",
+            githubUrl: "https://github.com/MinenMaster/First-Personal-Website",
         },
         {
             title: "Project One",
             description: "This is a brief description of Project One.",
-            tags: ["React", "Node.js", "CSS"],
+            icons: ["React", "Node.js", "CSS"],
             imageUrl: "/projects/TowerDefense.png",
             abstract: "IMS_Projekt-Abstract_TowerDefense.pdf",
             githubUrl: "https://github.com/MinenMaster/TowerDefense",
@@ -128,7 +127,7 @@ function Projects() {
         {
             title: "Project Two",
             description: "This is a brief description of Project Two.",
-            tags: ["Vue.js", "Firebase", "Sass"],
+            icons: ["Vue.js", "Firebase", "Sass"],
             imageUrl: "/projects/TowerDefense.png",
             abstract: "IMS_Projekt-Abstract_TowerDefense.pdf",
             githubUrl: "https://github.com/MinenMaster/TowerDefense",
@@ -136,7 +135,15 @@ function Projects() {
         {
             title: "Project Two",
             description: "This is a brief description of Project Two.",
-            tags: ["Vue.js", "Firebase", "Sass"],
+            icons: ["Vue.js", "Firebase", "Sass"],
+            imageUrl: "/projects/TowerDefense.png",
+            abstract: "IMS_Projekt-Abstract_TowerDefense.pdf",
+            githubUrl: "https://github.com/MinenMaster/TowerDefense",
+        },
+        {
+            title: "TowerDefense",
+            description: "A 3D tower defense game made with Unity.",
+            icons: [{ skill: "C#", icon: "csharp-plain colored" }],
             imageUrl: "/projects/TowerDefense.png",
             abstract: "IMS_Projekt-Abstract_TowerDefense.pdf",
             githubUrl: "https://github.com/MinenMaster/TowerDefense",
