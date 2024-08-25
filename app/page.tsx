@@ -206,8 +206,21 @@ export default function Home() {
                 <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl lg:w-full mx-4">
                     <h2 className="text-3xl mb-4">let&apos;s connect.</h2>
                     <p>
-                        Feel free to get in touch using the form below or
-                        sending an email to{" "}
+                        Did I catch your interest and do you want to get to know
+                        more about me? <br /> Get in touch with me using this
+                        form or writing an email to{" "}
+                        <u>
+                            <a href="mailto:dominik.s.meister@proton.me">
+                                dominik.s.meister@proton.me
+                            </a>
+                        </u>
+                        .
+                    </p>
+                    <p>or</p>
+                    <p>
+                        Did I catch your interest and do you want to get to know
+                        more about me? Get in touch with me using this
+                        form or writing an email to{" "}
                         <u>
                             <a href="mailto:dominik.s.meister@proton.me">
                                 dominik.s.meister@proton.me
