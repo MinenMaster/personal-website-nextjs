@@ -84,13 +84,20 @@ export default function Home() {
 
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 500) {
+                if (window.scrollY >= sectionTop - 400) {
                     const sectionId = section.getAttribute("id");
                     if (sectionId) {
                         currentSection = sectionId;
                     }
                 }
             });
+
+            if (
+                window.innerHeight + window.scrollY >=
+                document.body.offsetHeight
+            ) {
+                currentSection = "contact";
+            }
 
             setActiveSection(currentSection);
         };
@@ -128,7 +135,7 @@ export default function Home() {
                 ></div>
             </div>
 
-            <main className="flex flex-col items-center">
+            <main className="flex flex-col items-center overflow-hidden">
                 <div className="flex min-h-screen flex-col items-center justify-between">
                     <span id="home"></span>
                     <NavBar activeSection={activeSection} />
@@ -150,7 +157,7 @@ export default function Home() {
                     </a>
                 </div>
                 <span id="about"></span>
-                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl lg:w-full mx-4">
+                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl md:w-full mx-4">
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
                         <p>
@@ -186,7 +193,7 @@ export default function Home() {
                     </div>
                 </section>
                 <span id="projects"></span>
-                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl lg:w-full mx-4">
+                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl w-11/12 lg:w-full mx-4">
                     <h2 className="text-3xl mb-4">
                         projects i&apos;ve worked on.
                     </h2>
@@ -198,7 +205,7 @@ export default function Home() {
                     <Projects />
                 </section>
                 <span id="contact"></span>
-                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl lg:w-full mx-4">
+                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl w-11/12 lg:w-full mx-4">
                     <h2 className="text-3xl mb-4">let&apos;s connect.</h2>
                     <p>
                         Did I catch your interest and do you want to get to know
