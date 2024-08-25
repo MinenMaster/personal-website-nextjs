@@ -111,6 +111,7 @@ function Projects() {
             icons: [
                 { skill: "HTML5", icon: "html5-plain colored" },
                 { skill: "CSS3", icon: "css3-plain colored" },
+                { skill: "JavaScript", icon: "javascript-plain colored" },
             ],
             imageUrl: "/projects/PersonalWebsite.png",
             abstract: "IMS_Projekt-Abstract_PersonalWebsite.pdf",
@@ -137,7 +138,7 @@ function Projects() {
             ],
             imageUrl: "/projects/TowerDefense.png",
             abstract: "AAA",
-            githubUrl: "https://github.com/MinenMaster/TowerDefense",
+            githubUrl: "AAA",
         },
         {
             title: "HTML5 Game",
@@ -149,7 +150,7 @@ function Projects() {
             ],
             imageUrl: "/projects/TowerDefense.png",
             abstract: "AAA",
-            githubUrl: "https://github.com/MinenMaster/TowerDefense",
+            githubUrl: "AAA",
         },
         {
             title: "TowerDefense",
