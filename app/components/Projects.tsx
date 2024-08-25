@@ -9,7 +9,7 @@ type Urls = {
 interface Project {
     title: string;
     description: string;
-    tags: string[];
+    icons: (string | { skill: string; icon: string })[];
     imageUrl: string;
     abstract: string;
     githubUrl: string;
@@ -21,11 +21,19 @@ const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
         style={{ backgroundImage: `url(${project.imageUrl})` }}
     >
         <div className="projectInfo">
-            <h3>{project.title}</h3>
+            <h3 className="text-xl">{project.title}</h3>
             <p>{project.description}</p>
-            <div className="tags">
-                {project.tags.map((tag: string) => (
-                    <span key={tag}>{tag}</span>
+            <div className="icons">
+                {project.icons.map((item: any) => (
+                    <div key={item.skill} className="relative group mr-1">
+                        <i
+                            key={item.skill}
+                            className={`devicon-${item.icon} text-3xl`}
+                        ></i>
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
+                            {item.skill}
+                        </div>
+                    </div>
                 ))}
             </div>
             <a

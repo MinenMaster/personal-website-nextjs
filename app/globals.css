@@ -322,7 +322,7 @@ nav a {
     box-sizing: border-box;
 }
 
-.tags {
+.icons {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
