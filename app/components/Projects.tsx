@@ -136,9 +136,9 @@ function Projects() {
                     icon: "androidstudio-plain colored",
                 },
             ],
-            imageUrl: "/projects/TowerDefense.png",
-            abstract: "AAA",
-            githubUrl: "AAA",
+            imageUrl: "/projects/MusicCollection.png",
+            abstract: "IMS_Projekt-Abstract_MusicCollection.pdf",
+            githubUrl: "https://github.com/MinenMaster/MusicCollection.git",
         },
         {
             title: "HTML5 Game",
