@@ -136,7 +136,7 @@ function Projects() {
                     icon: "androidstudio-plain colored",
                 },
             ],
-            imageUrl: "/projects/MusicCollection.png",
+            imageUrl: "/projects/MusicCollection.webp",
             abstract: "IMS_Projekt-Abstract_MusicCollection.pdf",
             githubUrl: "https://github.com/MinenMaster/MusicCollection",
         },
