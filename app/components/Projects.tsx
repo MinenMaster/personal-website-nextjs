@@ -136,9 +136,9 @@ function Projects() {
                     icon: "androidstudio-plain colored",
                 },
             ],
-            imageUrl: "/projects/MusicCollection.webp",
+            imageUrl: "/projects/MusicCollection.png",
             abstract: "IMS_Projekt-Abstract_MusicCollection.pdf",
-            githubUrl: "AAA",
+            githubUrl: "https://github.com/MinenMaster/MusicCollection",
         },
         {
             title: "BulletHell",
