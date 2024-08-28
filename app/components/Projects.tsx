@@ -138,7 +138,7 @@ function Projects() {
             ],
             imageUrl: "/projects/MusicCollection.png",
             abstract: "IMS_Projekt-Abstract_MusicCollection.pdf",
-            githubUrl: "https://github.com/MinenMaster/MusicCollection.git",
+            githubUrl: "https://github.com/MinenMaster/MusicCollection",
         },
         {
             title: "HTML5 Game",
