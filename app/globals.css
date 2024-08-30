@@ -189,7 +189,8 @@ section p {
     z-index: -20;
 }
 
-nav a {
+nav a,
+footer .link {
     position: relative;
     text-decoration: none;
     transition: 0.5s;
