@@ -121,7 +121,7 @@ function Projects() {
             title: "NovaClient",
             description: "A simple utility mod / client for Minecraft.",
             icons: [{ skill: "Java", icon: "java-plain colored" }],
-            imageUrl: "/projects/TowerDefense.png",
+            imageUrl: "/projects/novaclient-empty.jpeg",
             abstract: "AAA",
             githubUrl: "https://github.com/MinenMaster/NovaClient",
         },
