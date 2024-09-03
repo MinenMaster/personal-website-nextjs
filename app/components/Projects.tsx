@@ -36,22 +36,28 @@ const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
                     </div>
                 ))}
             </div>
-            <a
-                href={urls[project.abstract]}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="abstractButton"
-            >
-                View Abstract
-            </a>
-            <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="abstractButton"
-            >
-                View GitHub
-            </a>
+
+            {project.abstract && (
+                <a
+                    href={urls[project.abstract]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="abstractButton"
+                >
+                    View Abstract
+                </a>
+            )}
+
+            {project.githubUrl && (
+                <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="abstractButton"
+                >
+                    View on GitHub
+                </a>
+            )}
         </div>
     </div>
 );
@@ -122,7 +128,7 @@ function Projects() {
             description: "A simple utility mod / client for Minecraft.",
             icons: [{ skill: "Java", icon: "java-plain colored" }],
             imageUrl: "/projects/novaclient-empty.jpeg",
-            abstract: "AAA",
+            // abstract: "AAA",
             githubUrl: "https://github.com/MinenMaster/NovaClient",
         },
         {
@@ -149,7 +155,7 @@ function Projects() {
                 { skill: "JavaScript", icon: "javascript-plain colored" },
             ],
             imageUrl: "/projects/BulletHell.png",
-            abstract: "AAA",
+            // abstract: "AAA",
             githubUrl: "https://github.com/MinenMaster/HTML5-BulletHell",
         },
         {
