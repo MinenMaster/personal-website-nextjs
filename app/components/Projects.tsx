@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 type Urls = {
     [key: string]: string;
@@ -9,10 +11,11 @@ type Urls = {
 interface Project {
     title: string;
     description: string;
+    link?: { icon: any; url: string };
     icons: (string | { skill: string; icon: string })[];
     imageUrl: string;
-    abstract: string;
-    githubUrl: string;
+    abstract?: string;
+    githubUrl?: string;
 }
 
 const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
@@ -21,7 +24,14 @@ const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
         style={{ backgroundImage: `url(${project.imageUrl})` }}
     >
         <div className="projectInfo">
-            <h3 className="text-xl">{project.title}</h3>
+            {(project.link && (
+                <h3 className="text-xl">
+                    <a href={project.link.url} target="_blank">
+                        {project.title}{" "}
+                        <FontAwesomeIcon icon={project.link.icon} />
+                    </a>
+                </h3>
+            )) || <h3 className="text-xl">{project.title}</h3>}
             <p>{project.description}</p>
             <div className="icons">
                 {project.icons.map((item: any) => (
@@ -84,14 +94,18 @@ function Projects() {
     useEffect(() => {
         const getAllAbstracts = async () => {
             for (const project of projects) {
-                await getAbstract(project.abstract);
+                if (project.abstract) {
+                    await getAbstract(project.abstract);
+                }
             }
         };
 
         // or
 
         // const getAllAbstracts = async () => {
-        //     const promises = projects.map((project) => getAbstract(project.abstract));
+        //     const promises = projects
+        //         .filter((project) => project.abstract)
+        //         .map((project) => getAbstract(project.abstract));
         //     await Promise.all(promises);
         // };
 
@@ -113,6 +127,10 @@ function Projects() {
         },
         {
             title: "Personal Website",
+            link: {
+                icon: faLink,
+                url: "https://personalweb.dominikmeister.com",
+            },
             description: "My first personal website.",
             icons: [
                 { skill: "HTML5", icon: "html5-plain colored" },
@@ -135,7 +153,7 @@ function Projects() {
             title: "MusicCollection",
             description: "This is a brief description of Project Two.",
             icons: [
-                { skill: "React", icon: "react-original colored" },
+                { skill: "React Native", icon: "react-original colored" },
                 { skill: "Node.js", icon: "nodejs-plain colored" },
                 {
                     skill: "Android Studio",
@@ -148,6 +166,10 @@ function Projects() {
         },
         {
             title: "BulletHell",
+            link: {
+                icon: faLink,
+                url: "https://bullethell.dominikmeister.com",
+            },
             description: "A simple bullet hell game made with HTML5.",
             icons: [
                 { skill: "HTML5", icon: "html5-plain colored" },
