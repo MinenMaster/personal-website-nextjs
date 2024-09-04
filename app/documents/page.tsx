@@ -123,6 +123,9 @@ export default function Documents() {
     return (
         <>
             <ProtectedRoute>
+                <head>
+                    <title>Documents | Dominik Meister</title>
+                </head>
                 <main className="flex flex-col items-center">
                     <NavBar activeSection={"documents"} />
                     <div className="flex flex-col items-center justify-center mt-36 mb-8">
