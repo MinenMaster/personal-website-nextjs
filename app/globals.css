@@ -189,8 +189,8 @@ section p {
     z-index: -20;
 }
 
-nav a,
-footer .link {
+footer .link,
+nav a {
     position: relative;
     text-decoration: none;
     transition: 0.5s;
@@ -218,12 +218,12 @@ footer .link {
     }
 }
 
-.active {
+nav a.active {
     color: rgb(var(--primary-light-rgb));
     font-weight: 700;
 }
 
-.active::after {
+nav a.active::after {
     position: absolute;
     content: "";
     top: 100%;
