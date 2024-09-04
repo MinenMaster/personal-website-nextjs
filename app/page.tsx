@@ -163,12 +163,11 @@ export default function Home() {
                         <p>
                             Hi, my name is Dominik, I&apos;m 17 years old, and I
                             live in Kehrsatz. My dad is an IT specialist and a
-                            passionate tinkerer, and he tried to pass on his
-                            love for technology to me at a young age. I first
-                            started programming through Minecraft, where I
-                            created simple mods and scripts. Later, I got more
-                            into Python and began learning about web
-                            development.
+                            passionate tinkerer, and he passed on his love for
+                            technology to me at a young age. I first started
+                            programming through Minecraft, where I created
+                            simple mods and scripts. Later, I got more into
+                            Python and began learning about web development.
                         </p>
                         <p>
                             I enjoy taking on complex challenges with computers.
