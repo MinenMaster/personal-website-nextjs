@@ -43,6 +43,10 @@ main {
 
 section p {
     margin: 16px 0;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 @layer utilities {
