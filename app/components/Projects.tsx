@@ -145,13 +145,13 @@ function Projects() {
             title: "NovaClient",
             description: "A simple utility mod / client for Minecraft.",
             icons: [{ skill: "Java", icon: "java-plain colored" }],
-            imageUrl: "/projects/novaclient-empty.jpeg",
+            imageUrl: "/projects/novaclient.webp",
             // abstract: "AAA",
             githubUrl: "https://github.com/MinenMaster/NovaClient",
         },
         {
             title: "MusicCollection",
-            description: "This is a brief description of Project Two.",
+            description: "A music library app made with React Native.",
             icons: [
                 { skill: "React Native", icon: "react-original colored" },
                 { skill: "Node.js", icon: "nodejs-plain colored" },
