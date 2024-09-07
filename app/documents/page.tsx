@@ -67,32 +67,32 @@ export default function Documents() {
         },
         {
             name: "KNW106.pdf",
-            title: "Grade Report m106",
+            title: "Module Report - m106",
             description: "My grade report for the module 106.",
         },
         {
             name: "KNW187.pdf",
-            title: "Grade Report m187",
+            title: "Module Report - m187",
             description: "My grade report for the module 187.",
         },
         {
             name: "KNW210.pdf",
-            title: "Grade Report m210",
+            title: "Module Report - m210",
             description: "My grade report for the module 210.",
         },
         {
             name: "KNW294.pdf",
-            title: "Grade Report m294",
+            title: "Module Report - m294",
             description: "My grade report for the module 294.",
         },
         {
             name: "KNW295.pdf",
-            title: "Grade Report m295",
+            title: "Module Report - m295",
             description: "My grade report for the module 295.",
         },
         {
             name: "KNW335.pdf",
-            title: "Grade Report m335",
+            title: "Module Report - m335",
             description: "My grade report for the module 335.",
         },
         {
