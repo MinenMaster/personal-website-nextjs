@@ -55,7 +55,7 @@ const LoginContent = () => {
                 <div className="shape"></div>
             </div>
             <main className="flex flex-col items-center w-screen h-screen">
-                <form onSubmit={handleLogin}>
+                <form onSubmit={handleLogin} className="formLogin">
                     <h1>Login</h1>
 
                     <label htmlFor="username">Username</label>

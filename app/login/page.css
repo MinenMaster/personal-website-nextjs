@@ -33,7 +33,7 @@ body {
     right: -30px;
     bottom: -80px;
 }
-form {
+.formLogin {
     width: 95vw;
     max-width: 24rem;
     background-color: rgba(255, 255, 255, 0.13);
@@ -46,14 +46,14 @@ form {
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 35px 35px;
 }
-form * {
+.formLogin * {
     font-family: "Poppins", sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
-form h1 {
+.formLogin h1 {
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;

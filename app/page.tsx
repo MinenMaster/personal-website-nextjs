@@ -9,30 +9,6 @@ import Projects from "./components/Projects";
 export default function Home() {
     const [activeSection, setActiveSection] = useState("home");
 
-    // const devicons = [
-    //     "typescript-plain colored",
-    //     "javascript-plain colored",
-    //     "python-plain colored",
-    //     "java-plain colored",
-    //     "cplusplus-plain colored",
-    //     "csharp-plain colored",
-    //     "react-original colored",
-    //     "html5-plain colored",
-    //     "css3-plain colored",
-    //     "nodejs-plain colored",
-    //     "express-original",
-    //     "nextjs-plain",
-    //     "amazonwebservices-plain-wordmark",
-    //     "postgresql-plain colored",
-    //     "mysql-original colored",
-    //     "vercel-original",
-    //     "docker-plain colored",
-    //     "git-plain colored",
-    //     "github-original",
-    //     "gitlab-plain colored",
-    //     "vscode-plain colored",
-    // ];
-
     const programmingLanguages = [
         { skill: "TypeScript", icon: "typescript-plain colored" },
         { skill: "JavaScript", icon: "javascript-plain colored" },
@@ -218,25 +194,6 @@ export default function Home() {
                     </p>
                     <ContactForm />
                 </section>
-                {/* <section>
-                    Who am I I&apos;m currently in my second year of apprenticeship
-                    as a computer scientist. My passion for technology drives me
-                    to continually learn and develop my skills. When something
-                    interests me, I&apos;m highly capable of learning quickly and
-                    thoroughly. My goal is to specialize in IT security in the
-                    future, where I can leverage my skills and knowledge to
-                    protect and secure digital information. I&apos;m eager to
-                    continue growing as a developer and to contribute to
-                    projects that challenge and inspire me. Hobbies In my free
-                    time, I enjoy staying active and engaged in various
-                    activities. Volleyball is one of my favorite sports, and I
-                    love playing it both competitively and casually with
-                    friends. I also make it a point to regularly go to the gym,
-                    as it helps me maintain my physical fitness and overall
-                    well-being. These hobbies not only provide a great balance
-                    to my professional life but also keep me motivated and
-                    energized
-                </section> */}
             </main>
             <Footer />
         </>
