@@ -127,10 +127,6 @@ function Projects() {
         },
         {
             title: "Personal Website",
-            link: {
-                icon: faLink,
-                url: "https://personalweb.dominikmeister.com",
-            },
             description: "My first personal website.",
             icons: [
                 { skill: "HTML5", icon: "html5-plain colored" },
