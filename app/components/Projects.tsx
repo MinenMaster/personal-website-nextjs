@@ -47,27 +47,29 @@ const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
                 ))}
             </div>
 
-            {project.abstract && (
-                <a
-                    href={urls[project.abstract]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="abstractButton"
-                >
-                    View Abstract
-                </a>
-            )}
+            <div className="buttonBox">
+                {project.abstract && (
+                    <a
+                        href={urls[project.abstract]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="abstractButton"
+                    >
+                        View Abstract
+                    </a>
+                )}
 
-            {project.githubUrl && (
-                <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="abstractButton"
-                >
-                    View on GitHub
-                </a>
-            )}
+                {project.githubUrl && (
+                    <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="abstractButton"
+                    >
+                        View on GitHub
+                    </a>
+                )}
+            </div>
         </div>
     </div>
 );

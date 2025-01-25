@@ -348,6 +348,12 @@ nav a.active::after {
     background-color: #21a1f1;
 }
 
+.buttonBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 @media (max-width: 768px) {
     .projectBox {
         width: 100%;
