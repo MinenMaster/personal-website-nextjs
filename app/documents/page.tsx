@@ -58,12 +58,12 @@ export default function Documents() {
         {
             name: "zeugniss-gibb.pdf",
             title: "School Report - gibb",
-            description: "My school report from the gibb.",
+            description: "My grades from the gibb.",
         },
         {
             name: "zeugniss-bwd.pdf",
             title: "School Report - BWD",
-            description: "My school report from the BWD.",
+            description: "My grades from the BWD.",
         },
         {
             name: "KNW106.pdf",
