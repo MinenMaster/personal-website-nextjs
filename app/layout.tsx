@@ -21,12 +21,13 @@ export default function RootLayout({
                 <title>Portfolio | Dominik Meister</title>
                 <meta
                     name="description"
-                    content="My personal portfolio website"
+                    content="Dominik Meister's portfolio website. Full stack software engineer fascinated by the world of code."
                 />
                 <meta
                     name="keywords"
                     content="Dominik Meister, dominikmeister, portfolio, developer, software engineer, full stack, frontend, backend, web, website, app, application, programming, coding, development, design, ux, ui, user experience, user interface, react, next.js, typescript, javascript, python, java, html5, css3, node.js, express, amazonaws, postgresql, vercel, docker, git, github, gitlab, visualstudiocode, mysql"
                 />
+                <link rel="canonical" href="https://dominikmeister.com" />
                 <link
                     rel="stylesheet"
                     type="text/css"
