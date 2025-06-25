@@ -137,7 +137,6 @@ function Projects() {
             ],
             imageUrl: "/projects/PersonalWebsite.png",
             abstract: "IMS_Projekt-Abstract_PersonalWebsite.pdf",
-            githubUrl: "https://github.com/MinenMaster/First-Personal-Website",
         },
         {
             title: "NovaClient",
