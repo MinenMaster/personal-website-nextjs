@@ -10,29 +10,29 @@ export default function Home() {
     const [activeSection, setActiveSection] = useState("home");
 
     const programmingLanguages = [
-        { skill: "TypeScript", icon: "typescript-plain colored" },
+        { skill: "C#", icon: "csharp-plain colored" },
         { skill: "JavaScript", icon: "javascript-plain colored" },
         { skill: "Python", icon: "python-plain colored" },
         { skill: "Java", icon: "java-plain colored" },
-        { skill: "C#", icon: "csharp-plain colored" },
     ];
 
     const frontendBackendTechnologies = [
+        { skill: ".NET", icon: "dotnetcore-plain colored" },
         { skill: "React", icon: "react-original colored" },
         { skill: "Next.js", icon: "nextjs-plain" },
-        { skill: "HTML5", icon: "html5-plain colored" },
-        { skill: "CSS3", icon: "css3-plain colored" },
         { skill: "Node.js", icon: "nodejs-plain colored" },
         { skill: "PostgreSQL", icon: "postgresql-plain colored" },
+        { skill: "MySQL", icon: "mysql-original colored" },
     ];
 
     const misc = [
-        { skill: "Vercel", icon: "vercel-original" },
-        { skill: "Docker", icon: "docker-plain colored" },
-        { skill: "Kubernetes", icon: "kubernetes-plain colored" },
         { skill: "Git", icon: "git-plain colored" },
         { skill: "GitHub", icon: "github-original" },
         { skill: "VSCode", icon: "vscode-plain colored" },
+        { skill: "VisualStudio", icon: "visualstudio-plain colored" },
+        { skill: "Postman", icon: "postman-plain colored" },
+        { skill: "Docker", icon: "docker-plain colored" },
+        { skill: "Kubernetes", icon: "kubernetes-plain colored" },
     ];
 
     const DeviconList = ({ listName }: { listName: any[] }) => {
@@ -117,10 +117,6 @@ export default function Home() {
                     <NavBar activeSection={activeSection} />
                     <div className="flex flex-col items-center justify-center flex-grow">
                         <div className="relative flex flex-col lg:flex-row items-center justify-center max-w-4xl">
-                            <img
-                                src="portrait.jpg"
-                                className="w-96 rounded-xl m-4"
-                            />
                             <div className="relative flex place-items-center text-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
                                 <h1 className="text-5xl text-white">
                                     Welcome! My name is Dominik Meister.
@@ -137,12 +133,13 @@ export default function Home() {
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
                         <p>
-                            Hi, my name is Dominik and I&apos;m 18 years old. My dad is an IT specialist and a
-                            passionate tinkerer, and he passed on his love for
-                            technology to me at a young age. I first started
-                            programming through Minecraft, where I created
-                            simple mods and scripts. Later, I got more into
-                            Python and began learning about web development.
+                            Hi, my name is Dominik and I&apos;m 18 years old. My
+                            dad is an IT specialist and a passionate tinkerer,
+                            and he passed on his love for technology to me at a
+                            young age. I first started programming through
+                            Minecraft, where I created simple mods and scripts.
+                            Later, I got more into Python and began learning
+                            about web development.
                         </p>
                         <p>
                             I enjoy taking on complex challenges with computers.
