@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Key } from "react";
+import { useState, useEffect, Key, useRef } from "react";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
@@ -8,6 +8,20 @@ import Projects from "./components/Projects";
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState("home");
+    const nameClickTimestampsRef = useRef<number[]>([]);
+
+    const handleNameEasterEgg = () => {
+        const now = Date.now();
+        const recentClicks = [...nameClickTimestampsRef.current, now].filter(
+            (timestamp) => now - timestamp <= 3000,
+        );
+
+        nameClickTimestampsRef.current = recentClicks;
+
+        if (recentClicks.length >= 5) {
+            window.location.href = "http://pyramidenschema.live/";
+        }
+    };
 
     const programmingLanguages = [
         { skill: "C#", icon: "csharp-plain colored" },
@@ -119,7 +133,25 @@ export default function Home() {
                         <div className="relative flex flex-col lg:flex-row items-center justify-center max-w-4xl">
                             <div className="relative flex place-items-center text-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
                                 <h1 className="text-5xl text-white">
-                                    Welcome! My name is Dominik Meister.
+                                    Welcome! My name is{" "}
+                                    <span
+                                        className="cursor-text"
+                                        onClick={handleNameEasterEgg}
+                                        onKeyDown={(event) => {
+                                            if (
+                                                event.key === "Enter" ||
+                                                event.key === " "
+                                            ) {
+                                                event.preventDefault();
+                                                handleNameEasterEgg();
+                                            }
+                                        }}
+                                        role="button"
+                                        tabIndex={0}
+                                    >
+                                        Dominik
+                                    </span>{" "}
+                                    Meister.
                                 </h1>
                             </div>
                         </div>
