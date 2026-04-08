@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../context/AuthContext";
@@ -13,40 +14,40 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
     return (
         <nav className="flex justify-around p-4 m-4 backdrop-blur-md fixed top-0 z-10 border border-gray-600 rounded-full shadow-md max-w-screen-lg mx-auto mt-4">
             <div className="items-center lg:flex ">
-                <a
+                <Link
                     href="/#home"
                     className={`flex cursor-pointer transition-colors duration-300 mx-1 ${
                         activeSection === "home" ? "active" : ""
                     }`}
                 >
                     Home
-                </a>
+                </Link>
 
-                <a
+                <Link
                     href="/#about"
                     className={`flex cursor-pointer transition-colors duration-300 mx-1 ${
                         activeSection === "about" ? "active" : ""
                     }`}
                 >
                     About
-                </a>
-                <a
+                </Link>
+                <Link
                     href="/#projects"
                     className={`flex cursor-pointer transition-colors duration-300 mx-1 ${
                         activeSection === "projects" ? "active" : ""
                     }`}
                 >
                     Projects
-                </a>
-                <a
+                </Link>
+                <Link
                     href="/#contact"
                     className={`flex text-white cursor-pointer transition-colors duration-300 mx-1 ${
                         activeSection === "contact" ? "active" : ""
                     }`}
                 >
                     Contact
-                </a>
-                <a
+                </Link>
+                <Link
                     href="/documents"
                     className={`flex text-white cursor-pointer transition-colors duration-300 mx-1 ${
                         activeSection === "documents" ? "active" : ""
@@ -64,7 +65,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
                         />
                     )}
                     Documents
-                </a>
+                </Link>
             </div>
         </nav>
     );

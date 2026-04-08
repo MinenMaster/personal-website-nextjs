@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, Suspense, useEffect } from "react";
+import Link from "next/link";
 import { useAuth } from "../context/AuthContext";
 import { useRouter, useSearchParams } from "next/navigation";
 import "./page.css";
@@ -84,9 +85,9 @@ const LoginContent = () => {
                     <button className="buttonLogin" type="submit">
                         Login
                     </button>
-                    <a className="aLogin" href="/">
+                    <Link className="aLogin" href="/">
                         Back
-                    </a>
+                    </Link>
                 </form>
                 {loading && (
                     <div className="loaderBackground">
