@@ -7,7 +7,7 @@ const cspDirectives = [
     "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com",
     "img-src 'self' data: blob:",
     "font-src 'self' data: https://cdn.jsdelivr.net https://fonts.gstatic.com",
-    `connect-src 'self' ${process.env.NEXT_PUBLIC_API_BASE_URL}${isDev ? " ws: wss: http://localhost:3000 http://localhost:3001" : ""}`,
+    `connect-src 'self' ${process.env.NEXT_PUBLIC_API_DOMAIN}${isDev ? " ws: wss: http://localhost:3000 http://localhost:3001" : ""}`,
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
