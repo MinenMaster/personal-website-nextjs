@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+console.log("--------------- Environment ---------------");
+console.log(process.env.NODE_ENV);
+console.log("--------------- Environment ---------------");
 const isDev = process.env.NODE_ENV !== "production";
 
 const cspDirectives = [
