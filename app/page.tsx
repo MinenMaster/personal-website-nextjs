@@ -68,6 +68,9 @@ export default function Home() {
     };
 
     useEffect(() => {
+        console.log("--------------- Environment ---------------");
+        console.log(process.env.NODE_ENV);
+        console.log("--------------- Environment ---------------");
         const handleScroll = () => {
             const sections = document.querySelectorAll("span");
             let currentSection = "";
