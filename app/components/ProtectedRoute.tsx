@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children }: { children: ReactNode }) => {
         if (!loading && !isAuthenticated) {
             router.push("/login?from=" + pathname);
         }
-    }, [isAuthenticated, loading, router]);
+    }, [isAuthenticated, loading, router, pathname]);
 
     if (loading || !isAuthenticated) {
         return (

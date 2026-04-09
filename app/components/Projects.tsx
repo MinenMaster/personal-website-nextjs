@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { API_BASE_URL } from "../lib/config";
 
 type Urls = {
     [key: string]: string;
@@ -17,6 +18,76 @@ interface Project {
     abstract?: string;
     githubUrl?: string;
 }
+
+const projects: Project[] = [
+    {
+        title: "HomeAide",
+        description: "A .NET MAUI application for managing home automations.",
+        icons: [
+            { skill: ".NET", icon: "dot-net-plain colored" },
+            { skill: "C#", icon: "csharp-plain colored" },
+        ],
+        imageUrl: "/projects/HomeAide-Help.png",
+        abstract: "IMS_Projekt-Abstract_HomeAide.pdf",
+        githubUrl: "https://github.com/MinenMaster/HomeAide",
+    },
+    {
+        title: "Personal Website",
+        description: "My first personal website.",
+        icons: [
+            { skill: "HTML5", icon: "html5-plain colored" },
+            { skill: "CSS3", icon: "css3-plain colored" },
+            { skill: "JavaScript", icon: "javascript-plain colored" },
+        ],
+        imageUrl: "/projects/PersonalWebsite.png",
+        abstract: "IMS_Projekt-Abstract_PersonalWebsite.pdf",
+    },
+    {
+        title: "NovaClient",
+        description: "A simple utility mod / client for Minecraft.",
+        icons: [{ skill: "Java", icon: "java-plain colored" }],
+        imageUrl: "/projects/novaclient.webp",
+        githubUrl: "https://github.com/MinenMaster/NovaClient",
+    },
+    {
+        title: "MusicCollection",
+        description: "A music library app made with React Native.",
+        icons: [
+            { skill: "React Native", icon: "react-original colored" },
+            { skill: "Node.js", icon: "nodejs-plain colored" },
+            {
+                skill: "Android Studio",
+                icon: "androidstudio-plain colored",
+            },
+        ],
+        imageUrl: "/projects/MusicCollection.webp",
+        abstract: "IMS_Projekt-Abstract_MusicCollection.pdf",
+        githubUrl: "https://github.com/MinenMaster/MusicCollection",
+    },
+    {
+        title: "BulletHell",
+        link: {
+            icon: faLink,
+            url: "https://bullethell.dominikmeister.com",
+        },
+        description: "A simple bullet hell game made with HTML5.",
+        icons: [
+            { skill: "HTML5", icon: "html5-plain colored" },
+            { skill: "CSS3", icon: "css3-plain colored" },
+            { skill: "JavaScript", icon: "javascript-plain colored" },
+        ],
+        imageUrl: "/projects/BulletHell.png",
+        githubUrl: "https://github.com/MinenMaster/HTML5-BulletHell",
+    },
+    {
+        title: "TowerDefense",
+        description: "A 3D tower defense game made with Unity.",
+        icons: [{ skill: "C#", icon: "csharp-plain colored" }],
+        imageUrl: "/projects/TowerDefense.png",
+        abstract: "IMS_Projekt-Abstract_TowerDefense.pdf",
+        githubUrl: "https://github.com/MinenMaster/TowerDefense",
+    },
+];
 
 const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
     <div
@@ -77,10 +148,8 @@ const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
 function Projects() {
     const [urls, setUrls] = useState<Urls>({});
 
-    const URL = "https://api.dominikmeister.com/api";
-
     async function getAbstract(abstract: string) {
-        const res = await fetch(`${URL}/blobs/public/${abstract}`);
+        const res = await fetch(`${API_BASE_URL}/blobs/public/${abstract}`);
 
         if (res.ok) {
             const data = await res.json();
@@ -95,97 +164,14 @@ function Projects() {
 
     useEffect(() => {
         const getAllAbstracts = async () => {
-            for (const project of projects) {
-                if (project.abstract) {
-                    await getAbstract(project.abstract);
-                }
-            }
+            const promises = projects
+                .filter((project) => project.abstract)
+                .map((project) => getAbstract(project.abstract!));
+            await Promise.all(promises);
         };
-
-        // or
-
-        // const getAllAbstracts = async () => {
-        //     const promises = projects
-        //         .filter((project) => project.abstract)
-        //         .map((project) => getAbstract(project.abstract));
-        //     await Promise.all(promises);
-        // };
 
         getAllAbstracts();
     }, []);
-
-    const projects = [
-        {
-            title: "HomeAide",
-            description:
-                "A .NET MAUI application for managing home automations.",
-            icons: [
-                { skill: ".NET", icon: "dot-net-plain colored" },
-                { skill: "C#", icon: "csharp-plain colored" },
-            ],
-            imageUrl: "/projects/HomeAide-Help.png",
-            abstract: "IMS_Projekt-Abstract_HomeAide.pdf",
-            githubUrl: "https://github.com/MinenMaster/HomeAide",
-        },
-        {
-            title: "Personal Website",
-            description: "My first personal website.",
-            icons: [
-                { skill: "HTML5", icon: "html5-plain colored" },
-                { skill: "CSS3", icon: "css3-plain colored" },
-                { skill: "JavaScript", icon: "javascript-plain colored" },
-            ],
-            imageUrl: "/projects/PersonalWebsite.png",
-            abstract: "IMS_Projekt-Abstract_PersonalWebsite.pdf",
-        },
-        {
-            title: "NovaClient",
-            description: "A simple utility mod / client for Minecraft.",
-            icons: [{ skill: "Java", icon: "java-plain colored" }],
-            imageUrl: "/projects/novaclient.webp",
-            // abstract: "AAA",
-            githubUrl: "https://github.com/MinenMaster/NovaClient",
-        },
-        {
-            title: "MusicCollection",
-            description: "A music library app made with React Native.",
-            icons: [
-                { skill: "React Native", icon: "react-original colored" },
-                { skill: "Node.js", icon: "nodejs-plain colored" },
-                {
-                    skill: "Android Studio",
-                    icon: "androidstudio-plain colored",
-                },
-            ],
-            imageUrl: "/projects/MusicCollection.webp",
-            abstract: "IMS_Projekt-Abstract_MusicCollection.pdf",
-            githubUrl: "https://github.com/MinenMaster/MusicCollection",
-        },
-        {
-            title: "BulletHell",
-            link: {
-                icon: faLink,
-                url: "https://bullethell.dominikmeister.com",
-            },
-            description: "A simple bullet hell game made with HTML5.",
-            icons: [
-                { skill: "HTML5", icon: "html5-plain colored" },
-                { skill: "CSS3", icon: "css3-plain colored" },
-                { skill: "JavaScript", icon: "javascript-plain colored" },
-            ],
-            imageUrl: "/projects/BulletHell.png",
-            // abstract: "AAA",
-            githubUrl: "https://github.com/MinenMaster/HTML5-BulletHell",
-        },
-        {
-            title: "TowerDefense",
-            description: "A 3D tower defense game made with Unity.",
-            icons: [{ skill: "C#", icon: "csharp-plain colored" }],
-            imageUrl: "/projects/TowerDefense.png",
-            abstract: "IMS_Projekt-Abstract_TowerDefense.pdf",
-            githubUrl: "https://github.com/MinenMaster/TowerDefense",
-        },
-    ];
 
     return (
         <div className="projectsPage">

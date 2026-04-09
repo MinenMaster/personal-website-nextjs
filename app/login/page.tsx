@@ -4,6 +4,7 @@ import { useState, Suspense, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "../context/AuthContext";
 import { useRouter, useSearchParams } from "next/navigation";
+import { API_BASE_URL } from "../lib/config";
 import "./page.css";
 
 const LoginContent = () => {
@@ -14,8 +15,6 @@ const LoginContent = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    const URL = "https://api.dominikmeister.com/api";
-
     const searchParams = useSearchParams();
     const from = searchParams.get("from");
 
@@ -24,7 +23,7 @@ const LoginContent = () => {
 
         setLoading(true);
 
-        const res = await fetch(`${URL}/login`, {
+        const res = await fetch(`${API_BASE_URL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

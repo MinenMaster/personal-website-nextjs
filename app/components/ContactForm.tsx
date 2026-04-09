@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { API_BASE_URL } from "../lib/config";
 
 const ContactForm = () => {
     const [name, setName] = useState("");
@@ -15,20 +16,17 @@ const ContactForm = () => {
         setErrorMessage("");
 
         try {
-            const res = await fetch(
-                "https://api.dominikmeister.com/api/email",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        name,
-                        email,
-                        message,
-                    }),
-                }
-            );
+            const res = await fetch(`${API_BASE_URL}/email`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message,
+                }),
+            });
 
             if (res.ok) {
                 setSuccessMessage("Your message has been sent!");
@@ -38,7 +36,7 @@ const ContactForm = () => {
             } else {
                 console.log(res);
                 setErrorMessage(
-                    "There was an error sending your message. Please try again."
+                    "There was an error sending your message. Please try again.",
                 );
             }
         } catch (error) {

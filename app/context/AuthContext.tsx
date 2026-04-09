@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { API_BASE_URL } from "../lib/config";
 
 const AuthContext = createContext({
     isAuthenticated: false,
@@ -17,14 +18,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(true);
     const router = useRouter();
 
-    const URL = "https://api.dominikmeister.com/api";
-
     useEffect(() => {
         const checkAuth = async () => {
             const token = localStorage.getItem("token");
             if (token) {
                 try {
-                    const res = await fetch(`${URL}/auth`, {
+                    const res = await fetch(`${API_BASE_URL}/auth`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
