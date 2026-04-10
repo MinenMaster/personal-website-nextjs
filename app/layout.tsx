@@ -14,10 +14,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0"
-                ></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <title>Portfolio | Dominik Meister</title>
                 <meta
                     name="description"
@@ -35,9 +32,7 @@ export default function RootLayout({
                 />
             </head>
             <body className={inter.className}>
-                <noscript>
-                    You need to enable JavaScript to run this app.
-                </noscript>
+                <noscript>You need to enable JavaScript to run this app.</noscript>
                 <AuthProvider>{children}</AuthProvider>
             </body>
         </html>

@@ -26,6 +26,7 @@
 }
 
 body {
+    position: relative;
     z-index: 0;
     overflow-x: hidden;
     color: rgb(var(--foreground-rgb));
@@ -185,12 +186,12 @@ section p {
 }
 
 .glow-container {
-    overflow-x: hidden;
-    overflow-y: hidden;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
     background-color: rgb(var(--background-rgb));
     z-index: -20;
+    pointer-events: none;
 }
 
 footer .link,
@@ -310,7 +311,9 @@ nav a.active::after {
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
 }
 
 .projectBox:hover {

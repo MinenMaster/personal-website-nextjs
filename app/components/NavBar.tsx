@@ -12,7 +12,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
     const { isAuthenticated } = useAuth();
 
     return (
-        <nav className="flex justify-around p-4 m-4 backdrop-blur-md fixed top-0 z-10 border border-gray-600 rounded-full shadow-md max-w-screen-lg mx-auto mt-4">
+        <nav className="flex justify-around p-4 m-4 bg-black/25 backdrop-blur-md fixed top-0 z-10 border border-gray-600 rounded-full shadow-md max-w-screen-lg mx-auto mt-4">
             <div className="items-center lg:flex ">
                 <Link
                     href="/#home"
@@ -54,15 +54,9 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
                     }`}
                 >
                     {isAuthenticated ? (
-                        <FontAwesomeIcon
-                            icon={faLockOpen}
-                            className="my-auto mr-1"
-                        />
+                        <FontAwesomeIcon icon={faLockOpen} className="my-auto mr-1" />
                     ) : (
-                        <FontAwesomeIcon
-                            icon={faLock}
-                            className="my-auto mr-1"
-                        />
+                        <FontAwesomeIcon icon={faLock} className="my-auto mr-1" />
                     )}
                     Documents
                 </Link>

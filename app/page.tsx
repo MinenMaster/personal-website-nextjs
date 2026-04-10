@@ -149,7 +149,7 @@ export default function Home() {
                     </a>
                 </div>
                 <span id="about"></span>
-                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl md:w-full mx-4">
+                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl bg-black/25 backdrop-blur-[1px] md:max-w-4xl md:w-full mx-4">
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
                         <p>
@@ -172,7 +172,7 @@ export default function Home() {
                     </div>
                 </section>
                 <span id="projects"></span>
-                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl w-11/12 lg:w-full mx-4">
+                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl bg-black/25 backdrop-blur-[1px] md:max-w-4xl w-11/12 lg:w-full mx-4">
                     <h2 className="text-3xl mb-4">projects i&apos;ve worked on.</h2>
                     <p>
                         Here are some of the most interesting projects I&apos;ve worked on at school or home. Click the
@@ -181,7 +181,7 @@ export default function Home() {
                     <Projects />
                 </section>
                 <span id="contact"></span>
-                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl w-11/12 lg:w-full mx-4">
+                <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl bg-black/25 backdrop-blur-[1px] md:max-w-4xl w-11/12 lg:w-full mx-4">
                     <h2 className="text-3xl mb-4">let&apos;s connect.</h2>
                     <p>
                         Did I catch your interest? <br /> Get in touch with me using this form.
