@@ -3,9 +3,7 @@ const isDev = process.env.NODE_ENV !== "production";
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
 
 if (!apiDomain) {
-    throw new Error(
-        "Missing required environment variable: NEXT_PUBLIC_API_DOMAIN",
-    );
+    throw new Error("Missing required environment variable: NEXT_PUBLIC_API_DOMAIN");
 }
 
 const normalizedApiDomain = apiDomain.replace(/\/+$/, "");
@@ -16,7 +14,7 @@ const cspDirectives = [
     "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com",
     "img-src 'self' data: blob:",
     "font-src 'self' data: https://cdn.jsdelivr.net https://fonts.gstatic.com",
-    `connect-src 'self' ${normalizedApiDomain}${isDev ? " ws: wss: http://localhost:3000 http://localhost:3001" : ""}`,
+    `connect-src 'self' ${normalizedApiDomain} https://*.public.blob.vercel-storage.com${isDev ? " ws: wss: http://localhost:3000 http://localhost:3001" : ""}`,
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
