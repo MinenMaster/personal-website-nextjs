@@ -1,5 +1,17 @@
 /** @type {import('next').NextConfig} */
 const isDev = process.env.NODE_ENV !== "production";
+const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
+
+if (!apiDomain) {
+    throw new Error(
+        "Missing required environment variable: NEXT_PUBLIC_API_DOMAIN",
+    );
+}
+
+const normalizedApiDomain = apiDomain.replace(/\/+$/, "");
+const cspApiTarget = normalizedApiDomain.endsWith("/api")
+    ? normalizedApiDomain
+    : `${normalizedApiDomain}/api`;
 
 const cspDirectives = [
     "default-src 'self'",
@@ -7,7 +19,7 @@ const cspDirectives = [
     "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com",
     "img-src 'self' data: blob:",
     "font-src 'self' data: https://cdn.jsdelivr.net https://fonts.gstatic.com",
-    `connect-src 'self' ${process.env.NEXT_PUBLIC_API_DOMAIN}${isDev ? " ws: wss: http://localhost:3000 http://localhost:3001" : ""}`,
+    `connect-src 'self' ${cspApiTarget}${isDev ? " ws: wss: http://localhost:3000 http://localhost:3001" : ""}`,
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
