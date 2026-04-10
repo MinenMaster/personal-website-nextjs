@@ -28,12 +28,12 @@ const LoginContent = () => {
             headers: {
                 "Content-Type": "application/json",
             },
+            credentials: "include",
             body: JSON.stringify({ username, password }),
         });
 
         if (res.ok) {
-            const data = await res.json();
-            login(data.token);
+            login();
 
             const redirectTo = from || "/";
             router.push(redirectTo);

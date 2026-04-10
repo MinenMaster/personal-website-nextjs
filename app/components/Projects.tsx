@@ -90,16 +90,12 @@ const projects: Project[] = [
 ];
 
 const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
-    <div
-        className="projectBox"
-        style={{ backgroundImage: `url(${project.imageUrl})` }}
-    >
+    <div className="projectBox" style={{ backgroundImage: `url(${project.imageUrl})` }}>
         <div className="projectInfo">
             {(project.link && (
                 <h3 className="text-xl">
-                    <a href={project.link.url} target="_blank">
-                        {project.title}{" "}
-                        <FontAwesomeIcon icon={project.link.icon} />
+                    <a href={project.link.url} target="_blank" rel="noopener noreferrer">
+                        {project.title} <FontAwesomeIcon icon={project.link.icon} />
                     </a>
                 </h3>
             )) || <h3 className="text-xl">{project.title}</h3>}
@@ -107,10 +103,7 @@ const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
             <div className="icons">
                 {project.icons.map((item: any) => (
                     <div key={item.skill} className="relative group mr-1">
-                        <i
-                            key={item.skill}
-                            className={`devicon-${item.icon} text-3xl`}
-                        ></i>
+                        <i key={item.skill} className={`devicon-${item.icon} text-3xl`}></i>
                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
                             {item.skill}
                         </div>
@@ -131,12 +124,7 @@ const ProjectBox = ({ project, urls }: { project: Project; urls: Urls }) => (
                 )}
 
                 {project.githubUrl && (
-                    <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="abstractButton"
-                    >
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="abstractButton">
                         View on GitHub
                     </a>
                 )}
@@ -157,8 +145,6 @@ function Projects() {
                 ...prevUrls,
                 [abstract]: data.url,
             }));
-        } else {
-            console.error("Couldn't fetch for an abstract: ", res);
         }
     }
 

@@ -34,10 +34,7 @@ const ContactForm = () => {
                 setEmail("");
                 setMessage("");
             } else {
-                console.log(res);
-                setErrorMessage(
-                    "There was an error sending your message. Please try again.",
-                );
+                setErrorMessage("There was an error sending your message. Please try again.");
             }
         } catch (error) {
             setErrorMessage("An error occurred. Please try again later.");
@@ -92,18 +89,13 @@ const ContactForm = () => {
                 type="submit"
                 className="text-white w-full md:w-auto transform transition-transform duration-300 hover:scale-[1.01] px-4 py-2 rounded-full"
                 style={{
-                    background:
-                        "linear-gradient(259.53deg, #1d4ed8 8.53%, #f55f0a 96.34%)",
+                    background: "linear-gradient(259.53deg, #1d4ed8 8.53%, #f55f0a 96.34%)",
                 }}
             >
                 Send
             </button>
-            {successMessage && (
-                <p className="text-green-500 mt-4">{successMessage}</p>
-            )}
-            {errorMessage && (
-                <p className="text-red-500 mt-4">{errorMessage}</p>
-            )}
+            {successMessage && <p className="text-green-500 mt-4">{successMessage}</p>}
+            {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
         </form>
     );
 };

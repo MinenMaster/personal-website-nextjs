@@ -117,30 +117,25 @@ export default function Documents() {
     const [downloadingAll, setDownloadingAll] = useState(false);
 
     async function getDocument(name: string) {
-        const token = localStorage.getItem("token");
-        if (token) {
-            try {
-                const res = await fetch(`${API_BASE_URL}/blobs/secure/${name}`, {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
+        try {
+            const res = await fetch(`${API_BASE_URL}/blobs/secure/${name}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+            });
 
-                if (res.ok) {
-                    const data = await res.json();
-                    setUrls((prevUrls) => ({
-                        ...prevUrls,
-                        [name]: data.url,
-                    }));
-                } else {
-                    console.error("Couldn't fetch for a document: ", res);
-                    setError("Couldn't fetch for a document");
-                }
-            } catch (error) {
-                console.error("No token found:", error);
-                setError("No token found");
+            if (res.ok) {
+                const data = await res.json();
+                setUrls((prevUrls) => ({
+                    ...prevUrls,
+                    [name]: data.url,
+                }));
+            } else {
+                setError("Couldn't fetch one or more documents");
             }
+        } catch {
+            setError("Failed to load documents");
         }
     }
 
