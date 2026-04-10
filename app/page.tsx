@@ -12,9 +12,7 @@ export default function Home() {
 
     const handleNameEasterEgg = () => {
         const now = Date.now();
-        const recentClicks = [...nameClickTimestampsRef.current, now].filter(
-            (timestamp) => now - timestamp <= 3000,
-        );
+        const recentClicks = [...nameClickTimestampsRef.current, now].filter((timestamp) => now - timestamp <= 3000);
 
         nameClickTimestampsRef.current = recentClicks;
 
@@ -46,7 +44,6 @@ export default function Home() {
         { skill: "VisualStudio", icon: "visualstudio-plain colored" },
         { skill: "Postman", icon: "postman-plain colored" },
         { skill: "Docker", icon: "docker-plain colored" },
-        { skill: "Kubernetes", icon: "kubernetes-plain colored" },
     ];
 
     const DeviconList = ({ listName }: { listName: any[] }) => {
@@ -54,10 +51,7 @@ export default function Home() {
             <div className="flex space-x-4">
                 {listName.map((item: any, index: Key | null | undefined) => (
                     <div key={index} className="relative group">
-                        <i
-                            key={index}
-                            className={`devicon-${item.icon} text-4xl`}
-                        ></i>
+                        <i key={index} className={`devicon-${item.icon} text-4xl`}></i>
                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs rounded-md p-1">
                             {item.skill}
                         </div>
@@ -82,10 +76,7 @@ export default function Home() {
                 }
             });
 
-            if (
-                window.innerHeight + window.scrollY >=
-                document.body.offsetHeight
-            ) {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
                 currentSection = "contact";
             }
 
@@ -138,10 +129,7 @@ export default function Home() {
                                         className="cursor-text"
                                         onClick={handleNameEasterEgg}
                                         onKeyDown={(event) => {
-                                            if (
-                                                event.key === "Enter" ||
-                                                event.key === " "
-                                            ) {
+                                            if (event.key === "Enter" || event.key === " ") {
                                                 event.preventDefault();
                                                 handleNameEasterEgg();
                                             }
@@ -165,28 +153,16 @@ export default function Home() {
                     <div className="flex-col">
                         <h2 className="text-3xl mb-4">about me.</h2>
                         <p>
-                            Hi, my name is Dominik and I&apos;m 18 years old. My
-                            dad is an IT specialist and a passionate tinkerer,
-                            and he passed on his love for technology to me at a
-                            young age. I first started programming through
-                            Minecraft, where I created simple mods and scripts.
-                            Later, I got more into Python and began learning
-                            about web development.
+                            Hi, my name is Dominik. I first got into programming at a young age through Minecraft, where
+                            I created simple mods and scripts. Later, I got more into Python and began learning about
+                            web development.
                         </p>
                         <p>
-                            I enjoy taking on complex challenges with computers.
-                            I like working on problems until I find the best
-                            solution. At school, I&apos;m known for being
-                            helpful. Even if I don&apos;t know the perfect
-                            answer yet, I&apos;m always ready to help others
-                            with their tasks. I come from a big family where
-                            there&apos;s always something going on, and I often
-                            get to solve technical issues, whether it&apos;s for
-                            friends or family.
+                            I enjoy taking on complex technical challenges and working on problems until I find the best
+                            solution. I&apos;m known for being helpful and collaborative, and I like supporting others
+                            when they run into technical issues.
                         </p>
-                        <h3 className="text-xl mb-4">
-                            some technologies i use:
-                        </h3>
+                        <h3 className="text-xl mb-4">some technologies i use:</h3>
                         <p>Programming Languages:</p>
                         <DeviconList listName={programmingLanguages} />
                         <p>Frontend & Backend Technologies:</p>
@@ -197,13 +173,10 @@ export default function Home() {
                 </section>
                 <span id="projects"></span>
                 <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl w-11/12 lg:w-full mx-4">
-                    <h2 className="text-3xl mb-4">
-                        projects i&apos;ve worked on.
-                    </h2>
+                    <h2 className="text-3xl mb-4">projects i&apos;ve worked on.</h2>
                     <p>
-                        Here are some of the most interesting projects I&apos;ve
-                        worked on at school or home. Click the buttons to view
-                        the abstract or the GitHub repository.
+                        Here are some of the most interesting projects I&apos;ve worked on at school or home. Click the
+                        buttons to view the abstract or the GitHub repository.
                     </p>
                     <Projects />
                 </section>
@@ -211,14 +184,7 @@ export default function Home() {
                 <section className="flex flex-col justify-center p-6 z-[1] border border-gray-600 rounded-2xl md:max-w-4xl w-11/12 lg:w-full mx-4">
                     <h2 className="text-3xl mb-4">let&apos;s connect.</h2>
                     <p>
-                        Did I catch your interest? <br /> Get in touch with me
-                        using this form or writing an email to{" "}
-                        <u>
-                            <a href="mailto:dominik.s.meister@proton.me">
-                                dominik.s.meister@proton.me
-                            </a>
-                        </u>
-                        .
+                        Did I catch your interest? <br /> Get in touch with me using this form.
                     </p>
                     <ContactForm />
                 </section>
